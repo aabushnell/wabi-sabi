@@ -32,46 +32,45 @@
 
       nixpkgs.config.allowUnfree = true;
 
-      environment.systemPackages =
-        [ 
-	  pkgs._1password-gui
-	  pkgs.btop
-	  pkgs.firefox
-	  pkgs.itsycal
-	  pkgs.kitty
-	  pkgs.lsd
-	  pkgs.mkalias
-	  pkgs.neovim
-	  pkgs.neofetch
-	  pkgs.raycast
-	  pkgs.stats
-	  pkgs.the-unarchiver
-        ];
+      environment.systemPackages = [ 
+        pkgs._1password-gui
+        pkgs.btop
+        pkgs.firefox
+        pkgs.itsycal
+        pkgs.kitty
+        pkgs.lsd
+        pkgs.mkalias
+        pkgs.neovim
+        pkgs.neofetch
+        pkgs.raycast
+        pkgs.stats
+        pkgs.the-unarchiver
+      ];
 	
       homebrew = {
         enable = true;
-	brews = [
-	  "mas"
-	];
-	casks = [
-	  "blockblock"
-	  "citrix-workspace"
-	  "dhs"
-	  "knockknock"
-	  "lulu"
-	  "netiquette"
-	  "oversight"
-	  "private-internet-access"
-	  "ransomwhere"
-	  "reikey"
-	  "stremio"
-	  "taskexplorer"
-	];
-	masApps = {
-	};
-	onActivation.cleanup = "zap";
-	onActivation.autoUpdate = true;
-	onActivation.upgrade = true;
+        brews = [
+          "mas"
+        ];
+        casks = [
+          "blockblock"
+          "citrix-workspace"
+          "dhs"
+          "knockknock"
+          "lulu"
+          "netiquette"
+          "oversight"
+          "private-internet-access"
+          "ransomwhere"
+          "reikey"
+          "stremio"
+          "taskexplorer"
+        ];
+        masApps = {
+        };
+        onActivation.cleanup = "zap";
+        onActivation.autoUpdate = true;
+        onActivation.upgrade = true;
       };
 
       fonts.packages = with pkgs; [
@@ -87,12 +86,14 @@
         AppleShowAllExtensions = true;
         AppleShowAllFiles = true;
 
-	FXPreferredViewStyle = "clmv";
+        NewWindowTarget = "Home";
+
+	      FXPreferredViewStyle = "clmv";
       };
 
       security.pam.services.sudo_local = {
         enable = true;
-	touchIdAuth = true;
+	      touchIdAuth = true;
       };
 
       # Necessary for using flakes on this system.
@@ -112,7 +113,7 @@
 
       users.users.aaron = {
         name = "aaron";
-	home = "/Users/aaron";
+	      home = "/Users/aaron";
       };
 
       system.primaryUser = "aaron";
@@ -125,19 +126,18 @@
     darwinConfigurations."hecate" = nix-darwin.lib.darwinSystem {
       modules = [ 
         configuration 
-	nix-homebrew.darwinModules.nix-homebrew
-	{
-	  nix-homebrew = {
-	    enable = true;
-	    enableRosetta = true;
-	    user = "aaron";
-	    taps = {
-	      "homebrew/homebrew-core" = homebrew-core;
+	      nix-homebrew.darwinModules.nix-homebrew {
+	        nix-homebrew = {
+            enable = true;
+            enableRosetta = true;
+            user = "aaron";
+            taps = {
+              "homebrew/homebrew-core" = homebrew-core;
               "homebrew/homebrew-cask" = homebrew-cask;
-	    };
-	    mutableTaps = false;
-	  };
-	}
+	          };
+	          mutableTaps = false;
+	        };
+	      }
       ];
     };
   };
