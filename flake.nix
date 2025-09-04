@@ -78,8 +78,9 @@
         nerd-fonts.jetbrains-mono
       ];
 
-      system.defaults = {
-        dock.autohide = true;
+      system.defaults.dock = {
+        autohide = true;
+        show-recents = false;
       };
 
       system.defaults.finder = {
