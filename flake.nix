@@ -19,6 +19,11 @@
       flake = false;
     };
 
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
   outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew, homebrew-core, homebrew-cask }:
@@ -72,7 +77,7 @@
 
       system.defaults.finder = {
         AppleShowAllExtensions = true;
-        AppleShowAllFiles      = true;
+        AppleShowAllFiles = true;
       };
 
       # Necessary for using flakes on this system.
