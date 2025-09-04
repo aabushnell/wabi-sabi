@@ -38,6 +38,7 @@
 	  pkgs.firefox
 	  pkgs.itsycal
 	  pkgs.kitty
+	  pkgs.lsd
 	  pkgs.mkalias
 	  pkgs.neovim
 	  pkgs.neofetch
