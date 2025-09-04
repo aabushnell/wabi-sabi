@@ -53,6 +53,7 @@
 	];
 	casks = [
 	  "blockblock"
+	  "citrix-workspace"
 	  "dhs"
 	  "knockknock"
 	  "lulu"
