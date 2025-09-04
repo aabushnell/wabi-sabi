@@ -85,6 +85,8 @@
       system.defaults.finder = {
         AppleShowAllExtensions = true;
         AppleShowAllFiles = true;
+
+	FXPreferredViewStyle = "clmv";
       };
 
       security.pam.services.sudo_local = {
