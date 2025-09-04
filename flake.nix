@@ -35,6 +35,7 @@
       environment.systemPackages =
         [ 
 	  pkgs._1password-gui
+	  pkgs.btop
 	  pkgs.firefox
 	  pkgs.itsycal
 	  pkgs.kitty
@@ -73,8 +74,8 @@
 	onActivation.upgrade = true;
       };
 
-      fonts.packages = [
-        (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+      fonts.packages = with pkgs; [
+        nerd-fonts.jetbrains-mono
       ];
 
       system.defaults = {
