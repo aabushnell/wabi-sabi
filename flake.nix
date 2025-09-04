@@ -26,7 +26,7 @@
 
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew, homebrew-core, homebrew-cask }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew, homebrew-core, homebrew-cask, zen-browser }:
   let
     configuration = { pkgs, config, ... }: {
 
