@@ -75,7 +75,7 @@
 
       fonts.packages = [
         (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
-      ]
+      ];
 
       system.defaults = {
         dock.autohide = true;
