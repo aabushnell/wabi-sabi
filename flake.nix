@@ -87,7 +87,10 @@
         AppleShowAllFiles = true;
       };
 
-      security.pam.enableSudoTouchIdAuth = true;
+      security.pam.services.sudo_local = {
+        enable = true;
+	touchIdAuth = true;
+      };
 
       # Necessary for using flakes on this system.
       nix.settings.experimental-features = "nix-command flakes";
