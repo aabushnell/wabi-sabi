@@ -72,6 +72,7 @@
           "dhs"
           "knockknock"
           "lulu"
+          "microsoft-word"
           "netiquette"
           "oversight"
           "private-internet-access"
