@@ -125,7 +125,7 @@
       # The platform the configuration will be used on.
       nixpkgs.hostPlatform = "aarch64-darwin";
 
-      networking.hostName = "hecate";
+      networking.hostName = "bahoukan";
 
       users.users.aaron = {
         name = "aaron";
