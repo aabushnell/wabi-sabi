@@ -82,6 +82,7 @@
           "taskexplorer"
         ];
         masApps = {
+          "Calendars" = 608834326;
         };
         onActivation.cleanup = "zap";
         onActivation.autoUpdate = true;
