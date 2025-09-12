@@ -1,10 +1,5 @@
 { inputs, pkgs, config, ... }: {
 
-
-  fonts.packages = with pkgs; [
-    nerd-fonts.jetbrains-mono
-  ];
-
   system.defaults.dock = {
     autohide = true;
     show-recents = false;

@@ -82,6 +82,7 @@
         ./modules/configuration.nix
         ./modules/packages.nix
         ./modules/homebrew.nix
+        ./modules/fonts.nix
 	      nix-homebrew.darwinModules.nix-homebrew {
 	        nix-homebrew = {
             enable = true;
