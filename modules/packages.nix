@@ -12,6 +12,7 @@
     pkgs.mkalias
     pkgs.neovim
     pkgs.neofetch
+    pkgs.nh
     pkgs.raycast
     pkgs.stats
     pkgs.the-unarchiver
