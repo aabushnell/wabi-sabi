@@ -143,7 +143,7 @@
   {
     # Build darwin flake using:
     # $ darwin-rebuild build --flake .#hecate
-    darwinConfigurations."hecate" = nix-darwin.lib.darwinSystem {
+    darwinConfigurations."bahoukan" = nix-darwin.lib.darwinSystem {
       modules = [ 
         configuration 
 	      nix-homebrew.darwinModules.nix-homebrew {
