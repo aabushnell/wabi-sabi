@@ -38,6 +38,7 @@
     masApps = {
       "Calendars" = 608834326;
     };
+    taps = builtins.attrNames config.nix-homebrew.taps;
     onActivation.cleanup = "zap";
     onActivation.autoUpdate = true;
     onActivation.upgrade = true;
