@@ -80,6 +80,8 @@
       modules = [ 
         bahoukan-config
         ./modules/configuration.nix
+        ./modules/packages.nix
+        ./modules/homebrew.nix
 	      nix-homebrew.darwinModules.nix-homebrew {
 	        nix-homebrew = {
             enable = true;
