@@ -40,77 +40,9 @@
     homebrew-cask,
     zen-browser,
     ...
-  }:
+  }: 
   let
-    configuration = { pkgs, config, ... }: {
-
-      nixpkgs.config.allowUnfree = true;
-
-      environment.systemPackages = [ 
-        pkgs._1password-gui
-        pkgs.btop
-        pkgs.firefox
-        pkgs.itsycal
-        pkgs.kitty
-        pkgs.lsd
-        pkgs.mkalias
-        pkgs.neovim
-        pkgs.neofetch
-        pkgs.raycast
-        pkgs.stats
-        pkgs.the-unarchiver
-      ];
-	
-      homebrew = {
-        enable = true;
-        brews = [
-          "mas"
-        ];
-        casks = [
-          "blockblock"
-          "citrix-workspace"
-          "dhs"
-          "knockknock"
-          "lulu"
-          "microsoft-word"
-          "netiquette"
-          "oversight"
-          "private-internet-access"
-          "ransomwhere"
-          "reikey"
-          "stremio"
-          "taskexplorer"
-        ];
-        masApps = {
-          "Calendars" = 608834326;
-        };
-        onActivation.cleanup = "zap";
-        onActivation.autoUpdate = true;
-        onActivation.upgrade = true;
-      };
-
-      fonts.packages = with pkgs; [
-        nerd-fonts.jetbrains-mono
-      ];
-
-      system.defaults.dock = {
-        autohide = true;
-        show-recents = false;
-      };
-
-      system.defaults.finder = {
-        AppleShowAllExtensions = true;
-        AppleShowAllFiles = true;
-
-        NewWindowTarget = "Home";
-
-	      FXPreferredViewStyle = "clmv";
-      };
-
-      security.pam.services.sudo_local = {
-        enable = true;
-	      touchIdAuth = true;
-      };
+    bahoukan-config = { pkgs, config, ... }: {
 
       # Necessary for using flakes on this system.
       nix.settings.experimental-features = [
@@ -144,7 +76,9 @@
     # Build darwin flake using:
     # $ darwin-rebuild build --flake .#hecate
     darwinConfigurations."bahoukan" = nix-darwin.lib.darwinSystem {
+      specialArgs = { inherit inputs; };
       modules = [ 
+        bahoukan-config
         ./configuration.nix
 	      nix-homebrew.darwinModules.nix-homebrew {
 	        nix-homebrew = {
