@@ -1,10 +1,5 @@
 { inputs, pkgs, config, ... }: {
 
-  system.defaults.dock = {
-    autohide = true;
-    show-recents = false;
-  };
-
   system.defaults.finder = {
     AppleShowAllExtensions = true;
     AppleShowAllFiles = true;
