@@ -79,7 +79,7 @@
       specialArgs = { inherit inputs; };
       modules = [ 
         bahoukan-config
-        ./configuration.nix
+        ./modules/configuration.nix
 	      nix-homebrew.darwinModules.nix-homebrew {
 	        nix-homebrew = {
             enable = true;
