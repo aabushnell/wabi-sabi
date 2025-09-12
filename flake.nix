@@ -145,7 +145,7 @@
     # $ darwin-rebuild build --flake .#hecate
     darwinConfigurations."bahoukan" = nix-darwin.lib.darwinSystem {
       modules = [ 
-        configuration 
+        ./configuration.nix
 	      nix-homebrew.darwinModules.nix-homebrew {
 	        nix-homebrew = {
             enable = true;
