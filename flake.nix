@@ -79,7 +79,6 @@
       specialArgs = { inherit inputs; };
       modules = [ 
         bahoukan-config
-        ./modules/configuration.nix
         ./modules/packages.nix
         ./modules/homebrew.nix
         ./modules/fonts.nix
