@@ -84,6 +84,7 @@
         ./modules/homebrew.nix
         ./modules/fonts.nix
         ./modules/system/dock.nix
+        ./modules/system/finder.nix
 	      nix-homebrew.darwinModules.nix-homebrew {
 	        nix-homebrew = {
             enable = true;
