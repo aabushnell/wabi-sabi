@@ -61,7 +61,7 @@
       # The platform the configuration will be used on.
       nixpkgs.hostPlatform = "aarch64-darwin";
 
-      networking.hostName = "bahoukan";
+      networking.hostName = "miyoshi";
 
       users.users.aaron = {
         name = "aaron";
@@ -75,7 +75,7 @@
   {
     # Build darwin flake using:
     # $ darwin-rebuild build --flake .#hecate
-    darwinConfigurations."bahoukan" = nix-darwin.lib.darwinSystem {
+    darwinConfigurations."miyoshi" = nix-darwin.lib.darwinSystem {
       specialArgs = { inherit inputs; };
       modules = [ 
         bahoukan-config
