@@ -24,11 +24,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1758085625,
-        "narHash": "sha256-D0KVKNgWSDVjYFgPLEtSQvSKchTBT0YqSbNlH7OQ+bo=",
+        "lastModified": 1758119172,
+        "narHash": "sha256-LnVuGLf0PJHqqIHroxEzwXS57mjAdHSrXi0iODKbbiU=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "fb928abb67bd4df99040721ed48c3b42e24b1d08",
+        "rev": "9f408dc51c8e8216a94379e6356bdadbe8b4fef9",
         "type": "github"
       },
       "original": {
@@ -40,11 +40,11 @@
     "homebrew-cask": {
       "flake": false,
       "locked": {
-        "lastModified": 1758098480,
-        "narHash": "sha256-pFQe6zFBirqSlHmMA47FTiUmppsjku297BrXwJutUU8=",
+        "lastModified": 1758141848,
+        "narHash": "sha256-b46FGf7yjmIGdBfKvTP7OfhZhstLaTC0T8o6fRglzFc=",
         "owner": "homebrew",
         "repo": "homebrew-cask",
-        "rev": "bb20115d2502fdb1e7bfb5b427d78f079e304a6b",
+        "rev": "6560e46fd9fd91bee45f67cbfa90d2290188f6aa",
         "type": "github"
       },
       "original": {
@@ -56,11 +56,11 @@
     "homebrew-core": {
       "flake": false,
       "locked": {
-        "lastModified": 1758107438,
-        "narHash": "sha256-tYgonEHGWr2Rznx8/UkIjJ0/JYjXSiTtHhWuzMe5xrQ=",
+        "lastModified": 1758144612,
+        "narHash": "sha256-NQi8hU2eB+jUoW67RCIqJ/Sm9glFe2ZbCYh1A41c/ww=",
         "owner": "homebrew",
         "repo": "homebrew-core",
-        "rev": "87b8b0621192dbfe89cac55c09e5f64feb8b4a1a",
+        "rev": "8c1bd554d3d59ad5e236553c2a9385156884c1f4",
         "type": "github"
       },
       "original": {
@@ -131,7 +131,23 @@
         "homebrew-core": "homebrew-core",
         "nix-darwin": "nix-darwin",
         "nix-homebrew": "nix-homebrew",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "themes": "themes"
+      }
+    },
+    "themes": {
+      "locked": {
+        "lastModified": 1751294078,
+        "narHash": "sha256-nhjEKaILnVdQwUUYOmdIYuOWjQczi25nPpd7PaQewmE=",
+        "owner": "RGBCube",
+        "repo": "ThemeNix",
+        "rev": "27db9067eff05b1606c1e1baf515414364a538b8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "RGBCube",
+        "repo": "ThemeNix",
+        "type": "github"
       }
     }
   },
