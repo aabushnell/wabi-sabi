@@ -4,9 +4,7 @@
 
   environment.systemPackages = [ 
     pkgs._1password-gui
-    pkgs.bat
     pkgs.bash
-    pkgs.btop
     pkgs.cmake
     pkgs.devenv
     pkgs.firefox
@@ -22,6 +20,7 @@
     pkgs.raycast
     pkgs.stats
     pkgs.the-unarchiver
+    pkgs.tree-sitter
     pkgs.uv
     pkgs.zstd
   ];

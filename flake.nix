@@ -30,6 +30,7 @@
     self,
     nix-darwin,
     nixpkgs,
+    home-manager,
     nix-homebrew,
     homebrew-core,
     homebrew-cask,
@@ -73,12 +74,18 @@
       specialArgs = { inherit inputs; };
       modules = [ 
         bahoukan-config
+
+        home-manager.darwinModules.home-manager
+
+        ./modules/home-manager.nix
+  
         ./modules/packages.nix
         ./modules/homebrew.nix
         ./modules/fonts.nix
         ./modules/system/dock.nix
         ./modules/system/finder.nix
         ./modules/system/sudo.nix
+
 	      nix-homebrew.darwinModules.nix-homebrew {
 	        nix-homebrew = {
             enable = true;
