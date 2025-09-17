@@ -33,7 +33,6 @@
     nix-homebrew,
     homebrew-core,
     homebrew-cask,
-    zen-browser,
     ...
   }: 
   let
