@@ -24,6 +24,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    themes = {
+      url = "github:RGBCube/ThemeNix";
+    };
+
   };
 
   outputs = inputs@{
@@ -34,6 +38,7 @@
     nix-homebrew,
     homebrew-core,
     homebrew-cask,
+    themes,
     ...
   }: 
   let
@@ -66,12 +71,36 @@
       system.primaryUser = "aaron";
 
     };
+
+    miyoshiTheme = themes.custom {
+      name = "Miyoshi Gruvbox Theme";
+      author = "aaron";
+      base00 = "272727";
+      base01 = "CC231C";
+      base02 = "989719";
+      base03 = "D79920";
+      base04 = "448488";
+      base05 = "B16185";
+      base06 = "689D69";
+      base07 = "A89983";
+      base08 = "928373";
+      base09 = "FB4833";
+      base0A = "B8BA25";
+      base0B = "FABC2E";
+      base0C = "83A597";
+      base0D = "D3859A";
+      base0E = "8EC07B";
+      base0F = "EBDBB2";
+    };
+
   in
   {
     # Build darwin flake using:
     # $ darwin-rebuild build --flake .#hecate
     darwinConfigurations."miyoshi" = nix-darwin.lib.darwinSystem {
-      specialArgs = { inherit inputs; };
+      specialArgs = { 
+        miyoshiTheme = miyoshiTheme;
+      };
       modules = [ 
         bahoukan-config
 
