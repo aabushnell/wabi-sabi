@@ -107,10 +107,13 @@
         home-manager.darwinModules.home-manager
 
         ./modules/home-manager.nix
-  
         ./modules/packages.nix
         ./modules/homebrew.nix
+
+        ./modules/shell.nix
+
         ./modules/fonts.nix
+
         ./modules/system/dock.nix
         ./modules/system/finder.nix
         ./modules/system/sudo.nix
