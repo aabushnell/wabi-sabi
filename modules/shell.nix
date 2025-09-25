@@ -25,9 +25,9 @@
     # git
     g = "git";
 
-    ga = "git a";
-    gaa = "git aa";
-    gap = "git ap";
+    ga = "git a"; # git add
+    gaa = "git aa"; # git add ./
+    gap = "git ap"; # git add -p
 
     gc = "git commit";
     gcm = "git commit --message";
@@ -36,6 +36,8 @@
 
     gd = "git diff";
     gds = "git diff --staged";
+
+    gf = "git fetch";
 
     gp = "git push";
 
