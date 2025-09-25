@@ -9,6 +9,7 @@
     pkgs.devenv
     pkgs.firefox
     pkgs.fzf
+    pkgs.gh
     pkgs.itsycal
     pkgs.kitty
     pkgs.lsd
