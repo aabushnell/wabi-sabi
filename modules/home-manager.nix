@@ -1,12 +1,18 @@
-{ pkgs, miyoshiTheme, ... }: {
+{ pkgs, config, miyoshiTheme, ... }: {
 
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    users.aaron.home = {
-      stateVersion = "25.05";
-      homeDirectory = "/Users/aaron";
+
+    users.aaron = {
+      home = {
+        stateVersion = "25.05";
+        homeDirectory = "/Users/aaron";
+      };
+
+      xdg.enable = true;
     };
+
     sharedModules = [{
 
       programs.bat = {
