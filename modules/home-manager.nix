@@ -29,6 +29,11 @@
         enableZshIntegration = true;
       };
 
+      programs.zoxide = {
+        enable = true;
+        enableZshIntegration = true; 
+      };
+
       programs.git = {
         enable = true;
         lfs.enable = true;
