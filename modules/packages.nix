@@ -16,7 +16,6 @@
     pkgs.jetbrains.idea-ultimate
     pkgs.jetbrains.pycharm-professional
     pkgs.kitty
-    pkgs.lsd
     pkgs.mkalias
     pkgs.neovim
     pkgs.neofetch

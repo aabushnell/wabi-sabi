@@ -18,6 +18,11 @@
 
       programs.btop.enable = true;
 
+      programs.lsd = {
+        enable = true;
+        enableZshIntegration = true;
+      };
+
       programs.git = {
         enable = true;
         lfs.enable = true;
