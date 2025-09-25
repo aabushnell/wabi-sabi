@@ -32,12 +32,12 @@
 
   outputs = inputs@{
     self,
-    nix-darwin,
     nixpkgs,
-    home-manager,
+    nix-darwin,
     nix-homebrew,
     homebrew-core,
     homebrew-cask,
+    home-manager,
     themes,
     ...
   }: 
