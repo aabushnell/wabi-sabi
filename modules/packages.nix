@@ -11,6 +11,9 @@
     pkgs.fzf
     pkgs.gh
     pkgs.itsycal
+    pkgs.jetbrains.clion
+    pkgs.jetbrains.idea-ultimate
+    pkgs.jetbrains.pycharm-professional
     pkgs.kitty
     pkgs.lsd
     pkgs.mkalias
