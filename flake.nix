@@ -24,6 +24,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    fenix = {
+      url = "github:nix-community/fenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     themes = {
       url = "github:RGBCube/ThemeNix";
     };
@@ -38,6 +43,7 @@
     homebrew-core,
     homebrew-cask,
     home-manager,
+    fenix,
     themes,
     ...
   }: 
@@ -111,6 +117,7 @@
         ./modules/homebrew.nix
 
         ./modules/shell.nix
+        ./modules/rust.nix
 
         ./modules/fonts.nix
 
