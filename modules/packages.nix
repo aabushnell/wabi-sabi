@@ -21,6 +21,7 @@
     pkgs.neovim
     pkgs.neofetch
     pkgs.nh
+    pkgs.nodejs
     pkgs.pkg-config
     pkgs.raycast
     pkgs.stats
