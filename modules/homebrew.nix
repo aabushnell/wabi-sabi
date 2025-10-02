@@ -22,6 +22,7 @@
       "reikey"
       "stremio"
       "taskexplorer"
+      "webex"
     ];
 
     masApps = {
