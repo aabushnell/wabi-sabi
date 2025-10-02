@@ -1,4 +1,4 @@
-{ pkgs, config, ... }: {
+{ pkgs, config, lib, ... }: {
 
   # Set Environment Variables 
   environment.variables = {
@@ -51,6 +51,7 @@
     programs.zsh = {
       enable = true;
       enableCompletion = false;
+      syntaxHighlighting.enable = true;
       # autosuggestion.enable = true;
       dotDir = "${config.home-manager.users.aaron.xdg.configHome}/zsh";
       plugins = [
@@ -78,6 +79,12 @@
       oh-my-zsh = {
         enable = true;
       };
+      initContent = lib.mkOrder 1000 ''
+        zstyle ':autocomplete:*complete*:*' insert-unambiguous yes
+        zstyle ':autocomplete:*history*:*' insert-unambiguous yes
+        zstyle ':autocomplete:menu-search:*' insert-unambiguous yes
+        zstyle ':completion:*:*' matcher-list 'm:{[:lower:]-}={[:upper:]_}' '+r:|[.]=**'
+      '';
     };
 
     programs.starship = {
