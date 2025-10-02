@@ -10,6 +10,7 @@
     pkgs.firefox
     pkgs.fzf
     pkgs.gh
+    pkgs.inetutils
     pkgs.itsycal
     pkgs.jdk
     pkgs.jetbrains.clion
