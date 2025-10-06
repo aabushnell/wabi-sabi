@@ -1,4 +1,6 @@
-{ pkgs, ... }: {
+{ pkgs, inputs, ... }: {
+
+  nixpkgs.overlays = [ inputs.fenix.overlays.default ];
 
   environment.systemPackages = [
     
