@@ -1,4 +1,4 @@
-{ pkgs, config, miyoshiTheme, ... }: {
+{ pkgs, config, ... }: {
 
   home-manager = {
     useGlobalPkgs = true;
@@ -18,8 +18,6 @@
       programs.bat = {
         enable = true;
         config.theme = "gruvbox-dark";
-        themes.miyoshi.src 
-          = pkgs.writeText "miyoshi.tmTheme" miyoshiTheme.tmTheme;
       };
 
       programs.btop.enable = true;
