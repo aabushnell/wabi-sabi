@@ -28,6 +28,7 @@
     pkgs.the-unarchiver
     pkgs.tree-sitter
     pkgs.uv
+    pkgs.wget
     pkgs.zstd
   ];
 
