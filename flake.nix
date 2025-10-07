@@ -3,6 +3,8 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05";
 
     nix-darwin = {
       url = "github:nix-darwin/nix-darwin/master";
@@ -28,96 +30,16 @@
       url = "github:nix-community/fenix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    themes = {
-      url = "github:RGBCube/ThemeNix";
-    };
-
   };
 
-  outputs =
-    inputs@{ self
-    , nixpkgs
-    , nix-darwin
-    , nix-homebrew
-    , homebrew-core
-    , homebrew-cask
-    , home-manager
-    , fenix
-    , themes
-    , ...
-    }:
-    let
-      bahoukan-config = { pkgs, config, ... }: {
+  outputs = inputs @ {
+    self,
+    nixpkgs,
+    ...
+  }: let
+    globals = import ./globals.nix;
 
-        # Necessary for using flakes on this system.
-        nix.settings.experimental-features = [
-          "nix-command"
-          "flakes"
-          "pipe-operators"
-        ];
-
-        # Set Git commit hash for darwin-version.
-        system.configurationRevision = self.rev or self.dirtyRev or null;
-
-        # Used for backwards compatibility, please read the changelog before changing.
-        # $ darwin-rebuild changelog
-        system.stateVersion = 6;
-
-        # The platform the configuration will be used on.
-        nixpkgs.hostPlatform = "aarch64-darwin";
-
-        networking.hostName = "miyoshi";
-
-        users.users.aaron = {
-          name = "aaron";
-          home = "/Users/aaron";
-        };
-
-        system.primaryUser = "aaron";
-
-      };
-
-    in
-    {
-      # Build darwin flake using:
-      # $ darwin-rebuild build --flake .#hecate
-      darwinConfigurations."miyoshi" = nix-darwin.lib.darwinSystem {
-        specialArgs = {
-          inherit inputs;
-        };
-        modules = [
-          bahoukan-config
-
-          home-manager.darwinModules.home-manager
-
-          ./modules/home-manager.nix
-          ./modules/packages.nix
-          ./modules/homebrew.nix
-
-          ./modules/shell.nix
-          ./modules/rust.nix
-
-          ./modules/fonts.nix
-
-          ./modules/system/dock.nix
-          ./modules/system/finder.nix
-          ./modules/system/sudo.nix
-
-          nix-homebrew.darwinModules.nix-homebrew
-          {
-            nix-homebrew = {
-              enable = true;
-              enableRosetta = true;
-              user = "aaron";
-              taps = {
-                "homebrew/homebrew-core" = homebrew-core;
-                "homebrew/homebrew-cask" = homebrew-cask;
-              };
-              mutableTaps = false;
-            };
-          }
-        ];
-      };
-    };
+    allTargetConfigs = import ./targets { inherit self inputs globals; };
+  in
+    allTargetConfigs;
 } 

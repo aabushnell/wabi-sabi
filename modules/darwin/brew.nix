@@ -17,6 +17,8 @@
       "citrix-workspace"
       # source: objective-see
       "dhs"
+      # source: mozzila
+      "firefox"
       # source: objective-see
       "knockknock"
       # source: objective-see
