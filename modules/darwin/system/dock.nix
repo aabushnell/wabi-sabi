@@ -30,7 +30,7 @@
     persistent-apps = [
       { app = "/Applications/Nix Apps/kitty.app"; }
       { app = "/System/Applications/TextEdit.app"; }
-      { app = "/Applications/Nix Apps/firefox.app"; }
+      { app = "/Applications/Firefox.app"; }
       { app = "/System/Applications/Music.app"; }
       { app = "/System/Applications/Messages.app"; }
     ];
