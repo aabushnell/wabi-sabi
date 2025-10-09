@@ -21,12 +21,31 @@
     oh-my-zsh = {
       enable = true;
     };
-    initContent = lib.mkOrder 1000 ''
-      zstyle ':autocomplete:*complete*:*' insert-unambiguous yes
-      zstyle ':autocomplete:*history*:*' insert-unambiguous yes
-      zstyle ':autocomplete:menu-search:*' insert-unambiguous yes
-      zstyle ':completion:*:*' matcher-list 'm:{[:lower:]-}={[:upper:]_}' '+r:|[.]=**'
-    '';
+    initContent = let
+      earlyContent = lib.mkOrder 500 ''
+        zmodload zsh/zprof
+      '';
+      generalContent = lib.mkOrder 1000 ''
+        typeset -i updated_at=$(date +'%j' -r ~/.zcompdump 2>/dev/null || stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)
+        if [ $(date +'%j') != $updated_at ]; then
+          compinit -i
+        else
+          compinit -C -i
+        fi
+        zstyle ':autocomplete:*complete*:*' insert-unambiguous yes
+        zstyle ':autocomplete:*history*:*' insert-unambiguous yes
+        zstyle ':autocomplete:menu-search:*' insert-unambiguous yes
+        zstyle ':completion:*:*' matcher-list 'm:{[:lower:]-}={[:upper:]_}' '+r:|[.]=**'
+      '';
+      lateContent = lib.mkOrder 1500 ''
+        zprof
+      '';
+      in lib.mkMerge [
+        # earlyContent
+        generalContent
+        # lateContent
+      ];
+  };
   };
 
   programs.direnv = {
