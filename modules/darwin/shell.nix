@@ -1,6 +1,12 @@
 { pkgs, config, lib, ... }: {
 
   # Set Environment Variables 
+  # shells
+  environment.shells = [
+    pkgs.bashInteractive
+    pkgs.zsh
+    pkgs.nushell
+  ];
   environment.variables = {
     # bat integration
     MANPAGER = "bat --plain";
