@@ -1,12 +1,13 @@
 { pkgs, config, lib, ... }: {
 
-  # Set Environment Variables 
   # shells
   environment.shells = [
     pkgs.bashInteractive
     pkgs.zsh
     pkgs.nushell
   ];
+
+  # set environment variables 
   environment.variables = {
     # bat integration
     MANPAGER = "bat --plain";
@@ -19,7 +20,7 @@
     LESSHISTFILE="${config.home-manager.users.aaron.xdg.stateHome}/less/history";
   };
 
-  # Shell Aliases
+  # shell aliases
   environment.shellAliases = {
     # bat
     cat  = "bat";
