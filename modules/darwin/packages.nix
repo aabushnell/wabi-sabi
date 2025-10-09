@@ -7,6 +7,11 @@
     stats
     the-unarchiver
 
+    # shells
+    bashInteractive
+    zsh
+    nushell
+
     # x-platform apps
     _1password-gui
     # firefox
