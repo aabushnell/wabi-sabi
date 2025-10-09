@@ -46,6 +46,9 @@
         # lateContent
       ];
   };
+
+  programs.nushell = {
+    enable = true;
   };
 
   programs.direnv = {
