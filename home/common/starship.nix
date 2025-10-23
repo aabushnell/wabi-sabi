@@ -5,6 +5,7 @@
     enableZshIntegration = true;
     enableNushellIntegration = true;
     settings = {
+      command_timeout = 1000;
       add_newline = true;
       continuation_prompt = "[▸▹ ](dimmed white)";
       format = lib.concatStrings [
