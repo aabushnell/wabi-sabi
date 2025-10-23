@@ -31,8 +31,11 @@
     mkalias
     tree-sitter
 
-    # dev
+    # java
     jdk
+    maven
+
+    # other dev
     nodejs
     uv
   ];
