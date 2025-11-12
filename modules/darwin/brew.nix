@@ -9,6 +9,8 @@
     ];
 
     casks = [
+      # source: anki
+      "anki"
       # source: balena
       "balenaetcher"
       # source: objective-see
