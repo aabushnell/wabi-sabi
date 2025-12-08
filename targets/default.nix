@@ -23,8 +23,8 @@
   } // inputs;
 
   allTargetSpecialArgs = (
-    mylib.attrs.mapAttrs 
-    (_: specialArgsForTarget) 
+    mylib.attrs.mapAttrs
+    (_: specialArgsForTarget)
     globals.allTargetAttrs
   );
 
@@ -36,6 +36,6 @@
   ];
 in
   mylib.attrs.mergeAttrsList [
-    # (import ./nixos.nix args)
+    (import ./nixos.nix args)
     (import ./darwin.nix args)
   ]
