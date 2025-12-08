@@ -10,7 +10,7 @@ rec {
 
   allTargetAttrs = {
     # linux
-    x86_linux = "x86_64-linx";
+    x86_linux = "x86_64-linux";
     # darwin
     aarch64_darwin = "aarch64-darwin";
   };
