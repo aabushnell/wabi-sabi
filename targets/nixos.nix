@@ -18,7 +18,7 @@ let
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.${globals.username} = {
+          home-manager.users.${username} = {
             imports = modules_set.home-modules;
           };
         }
