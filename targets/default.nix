@@ -11,6 +11,8 @@
     inherit (globals) username userfullname useremail;
     inherit mylib;
 
+    inherit globals;
+
     pkgs-unstable = import inputs.nixpkgs-unstable {
       inherit system;
       config.allowUnfree = true;
