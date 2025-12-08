@@ -5,26 +5,33 @@ with allTargetAttrs;
 let
   base_args = {
     inherit home-manager;
-    nixpkgs = nixpkgs-unstable;
+    inherit nixpkgs-unstable;
+
+    system = x86-linux;
+    specialArgs = allTargetSpecialArgs.x86_linux;
   };
+
+mkSystem = modules_set: lib.nixosSystem (
+  base_args // {
+    modules =
+        modules_set.nixos-modules
+        ++
+        [
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            
+            home-manager.users.${globals.username} = {
+              imports = modules_set.home-modules;
+            };
+          }
+        ];
+  }
+);
 in {
 
   nixosConfigurations = {
-    "kizaemon" = lib.nixosSystem {
-      system = allTargetAttrs.x86-linux;
-      specialArgs = allTargetSpecialArgs.x86-linux;
-
-      modules = attrs.mergeAttrList [
-        kizaemon_modules.nixos-modules
-
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPkgs = true;
-          home-manager.users.${globals.username} = {
-            imports = kizaemon_modules.home-modules
-          };
-        }
-      ];
-    };
+    "kizaemon" = mkSystem kizaemon_modules;
   };
 }
