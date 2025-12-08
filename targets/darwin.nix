@@ -3,7 +3,7 @@ with args;
 with mylib;
 # NOTE: check if required
 with allTargetAttrs;
-let 
+let
   base_args = {
     inherit nix-darwin;
     inherit home-manager;
