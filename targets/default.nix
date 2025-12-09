@@ -34,7 +34,10 @@
     inputs
     globals
     configs
-    { inherit self lib mylib allTargetSpecialArgs; }
+    {
+      inherit self lib mylib allTargetSpecialArgs;
+      inherit globals;
+    }
   ];
 in
   mylib.attrs.mergeAttrsList [
