@@ -1,5 +1,5 @@
 { pkgs, username, userfullname, ... }: {
-  
+
   users.users."${username}" = {
     name = username;
     description = userfullname.full;
