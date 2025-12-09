@@ -1,8 +1,9 @@
-{ pkgs, username, ... }: 
+{ pkgs, nixvim, username, ... }: 
 
 {
 
   imports = [
+    nixvim.homeModules.nixvim
     # inputs.plasma-manager.homeManagerModules.plasma-manager
   ];
 
