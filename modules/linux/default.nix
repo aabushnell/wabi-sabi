@@ -51,7 +51,7 @@
   users.users.${globals.username} = {
     isNormalUser = true;
     description = globals.userfullname.full;
-    extraGroups = [ "networkmanager" "wheel"];
+    extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       kdePackages.kate
     ];
@@ -60,10 +60,16 @@
   security.sudo.enable = true;
 
   environment.systemPackages = with pkgs; [
-    git
+    gcc
     kitty
     vim
+    neovim
     wget
+    kdePackages.ksshaskpass
+  ];
+
+  fonts.packages = with pkgs; [
+    nerd-fonts.jetbrains-mono
   ];
 
   programs.firefox.enable = true;
