@@ -41,7 +41,7 @@
       }
       {
         mode = "n";
-        key "<leader>fg";
+	key = "<leader>fg";
         action = "<cmd>Telescope live_grep<cr>";
         options.desc = "Grep Files";
       }
@@ -51,7 +51,7 @@
       enable = true;
       settings = {
         background = "dark";
-        contrast - "medium";
+	contrast = "medium";
         transparent_mode = false;
       };
     };
@@ -62,6 +62,8 @@
       bufferline.enable = true;
       neo-tree.enable = true;
       which-key.enable = true;
+
+      web-devicons.enable = true;
 
       # Finder
       telescop = {
@@ -86,7 +88,6 @@
         servers = {
           nixd.enable = true;
           lua_ls.enable = true;
-          rust_analyzer.enable = true;
           pyright.enable = true;
         };
       };
@@ -110,9 +111,7 @@
           ];
         };
       };
-
-    }
-
+    };
   };
 
 }
