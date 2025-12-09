@@ -24,7 +24,7 @@ let
             inherit mylib;
             inherit (args) globals;
             inherit (globals) username userfullname useremail;
-            # inherit (allTargetSpecialArgs.x86_linux) pkgs-unstable;
+            inherit (allTargetSpecialArgs.x86_linux) nixvim;
           };
 
           home-manager.users.${username} = {
