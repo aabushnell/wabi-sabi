@@ -5,6 +5,7 @@
   imports = [
     ./nvidia.nix
     ./kde.nix
+    ../base.nix
   ];
 
   # Enable the X11 windowing system.
@@ -63,7 +64,6 @@
     gcc
     kitty
     vim
-    neovim
     wget
     kdePackages.ksshaskpass
   ];
