@@ -3,6 +3,7 @@ with args;
 with mylib;
 with allTargetAttrs;
 let
+  inherit (args) globals;
   mkSystem = modules_set: lib.nixosSystem {
     system = x86_linux;
 
@@ -18,6 +19,14 @@ let
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
+
+          home-manager.extraSpecialArgs = {
+            inherit mylib;
+            inherit (args) globals;
+            inherit (globals) username userfullname useremail;
+            # inherit (allTargetSpecialArgs.x86_linux) pkgs-unstable;
+          };
+
           home-manager.users.${username} = {
             imports = modules_set.home-modules;
           };
