@@ -5,7 +5,6 @@
     description = userfullname.full;
   };
 
-  system.primaryUser = username;
   # base system packages
   environment.systemPackages = with pkgs; [
     # nix utilities
