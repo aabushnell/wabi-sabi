@@ -28,53 +28,50 @@
     enable = true;
     lfs.enable = true;
 
-    settings = {
+    userName = "Aaron Bushnell";
+    userEmail = "aabushnell@gmail.com";
 
-      user = {
-        name = "Aaron Bushnell";
-        email = "aabushnell@gmail.com";
-      };
+    extraConfig = {
+      init.defaultBranch = "main";
 
-      extraConfig = {
-        init.defaultBranch = "main";
+      core.autorlf = true;
+      core.editor = "nvim";
+      core.ignorecase = true;
 
-        core.autorlf = true;
-        core.editor = "nvim";
-        core.ignorecase = true;
-
-        "url \"ssh://git@github.com/aabushnell\"" = {
-            insteadOf = "https://github.com/aabushnell";
+      url = {
+        "ssh://git@github.com/aabushnell" = {
+          insteadOf = "https://github.com/aabushnell";
         };
       };
+    };
 
-      aliases = {
-        a = "add";
-        aa = "add ./";
-        ap = "add --patch";
-
-        c = "commit";
-        cm = "commit --message";
-
-        cl = "clone";
-
-        d = "diff";
-        ds = "diff --staged";
-
-        p = "push";
-
-        pl = "pull";
-
-        s = "status";
+    delta = {
+      enable = true;
+      options = {
+        diff-so-fancy = true;
+        line-numbers = true;
+        true-color = "always";
       };
     };
-  };
 
-  programs.delta = {
-    enable = true;
-    options = {
-      diff-so-fancy = true;
-      line-numbers = true;
-      true-color = "always";
+    aliases = {
+      a = "add";
+      aa = "add ./";
+      ap = "add --patch";
+
+      c = "commit";
+      cm = "commit --message";
+
+      cl = "clone";
+
+      d = "diff";
+      ds = "diff --staged";
+
+      p = "push";
+
+      pl = "pull";
+
+      s = "status";
     };
   };
 
