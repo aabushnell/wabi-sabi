@@ -27,6 +27,8 @@
       "lulu"
       # source: microsoft
       "microsoft-word"
+      # source: microsoft
+      "microsoft-powerpoint"
       # source: objective-see
       "netiquette"
       # source: objective-see
