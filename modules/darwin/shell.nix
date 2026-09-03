@@ -52,6 +52,8 @@
     gpl = "git pull";
 
     gs = "git status";
+
+    rm = "rmtrash";
   };
 
 }

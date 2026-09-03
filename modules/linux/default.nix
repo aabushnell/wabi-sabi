@@ -65,6 +65,7 @@
     kitty
     vim
     wget
+    rmtrash
     kdePackages.ksshaskpass
   ];
 
