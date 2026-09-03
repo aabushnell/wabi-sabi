@@ -43,6 +43,10 @@
       "stremio"
       # source: objective-see
       "taskexplorer"
+      # source: oss
+      "xquartz"
+      # source: zoom
+      "zoom"
     ];
 
     masApps = {
