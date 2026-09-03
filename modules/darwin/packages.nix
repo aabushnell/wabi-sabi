@@ -7,6 +7,20 @@
     stats
     the-unarchiver
 
+    prismlauncher
+
+    obsidian
+
+    localsend
+
+    rmtrash
+    trash-cli
+
+    iina
+
+    ##
+    aalib
+
     # shells
     bashInteractive
     zsh
