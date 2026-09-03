@@ -32,6 +32,8 @@
 
     # misc
     neofetch
+
+    mpv
   ];
 
   # global nix settings
