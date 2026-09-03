@@ -43,8 +43,6 @@
       "stremio"
       # source: objective-see
       "taskexplorer"
-      # source: cisco systems
-      "webex"
     ];
 
     masApps = {
