@@ -51,6 +51,7 @@
 
     masApps = {
       "Calendars" = 608834326;
+      "Pixelmator Pro" = 1289583905;
     };
 
     taps = builtins.attrNames config.nix-homebrew.taps;
