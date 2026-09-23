@@ -1,7 +1,7 @@
 { inputs, ... }:
 
 {
-  flake.modules.darwin.brew =
+  flake.modules.darwin.homebrew =
     { config, ... }:
     let
       inherit (builtins) attrNames;
