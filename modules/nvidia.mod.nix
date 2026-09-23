@@ -23,5 +23,10 @@
       environment.sessionVariables = {
         NIXOS_OZONE_WL = "1";
       };
+
+      nixpkgs.allowedUnfreePackages = [
+        "nvidia-x11"
+        "nvidia-settings"
+      ];
     };
 }
