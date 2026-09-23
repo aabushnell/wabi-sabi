@@ -41,7 +41,7 @@
       }
       {
         mode = "n";
-	key = "<leader>fg";
+      	key = "<leader>fg";
         action = "<cmd>Telescope live_grep<cr>";
         options.desc = "Grep Files";
       }
@@ -51,7 +51,7 @@
       enable = true;
       settings = {
         background = "dark";
-	contrast = "medium";
+	      contrast = "medium";
         transparent_mode = false;
       };
     };
@@ -89,6 +89,16 @@
           nixd.enable = true;
           lua_ls.enable = true;
           pyright.enable = true;
+          clangd = {
+            enable = true;
+            cmd = [
+              "clangd"
+              "--background-index"
+              "--clang-tidy"
+              "--completion-style=detailed"
+              "--header-insertion=iwyu"
+            ];
+          };
         };
       };
 
@@ -109,6 +119,15 @@
             { name = "path"; }
             { name = "buffer"; }
           ];
+        };
+      };
+    };
+
+    none-ls = {
+      enable = true;
+      sources = {
+        formatting = {
+          clang_format.enable = true;   
         };
       };
     };
