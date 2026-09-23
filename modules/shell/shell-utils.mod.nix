@@ -32,7 +32,7 @@ in
         ${lib.getExe pkgs.zoxide} init zsh > $out
       '';
       zoxideInitNu = pkgs.runCommand "zoxide-init.nu" { } ''
-        ${lib.getExe pkgs.zoxide} init nu > $out
+        ${lib.getExe pkgs.zoxide} init nushell > $out
       '';
     in
     {
