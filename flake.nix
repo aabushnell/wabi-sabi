@@ -81,8 +81,6 @@
           "x86_64-linux"
         ];
 
-        imports =
-          [ inputs.flake-parts.flakeModules.modules ]
-          ++ filter (hasSuffix ".mod.nix") (listFilesRecursive ./.);
+        imports = filter (hasSuffix ".mod.nix") (listFilesRecursive ./.);
     };
 }
