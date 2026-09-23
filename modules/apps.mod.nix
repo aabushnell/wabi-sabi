@@ -10,16 +10,16 @@ let
         prismlauncher
         _1password-gui
         jetbrains.clion
-        jetbrains.idea-ultimate
-        jetbrains.pycharm-professional
+        jetbrains.idea
+        # jetbrains.pycharm
       ];
 
       nixpkgs.allowedUnfreePackages = [
         "obsidian"
         "1password"
         "clion"
-        "idea-ultimate"
-        "pycharm-professional"
+        "idea"
+        # "pycharm"
       ];
     };
 in
