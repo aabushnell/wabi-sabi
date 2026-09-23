@@ -86,7 +86,10 @@ let
           specialArgs = { inherit inputs mylib globals; };
           modules = systemMods ++ hjemBridge ++ [
             spec.hostModule
-            { networking.hostName = hostname; }
+            {
+              networking.hostName = hostname;
+              nixpkgs.hostPlatform = spec.system;
+            }
           ];
         };
     };
