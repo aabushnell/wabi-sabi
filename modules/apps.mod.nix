@@ -15,7 +15,8 @@ let
       ];
 
       nixpkgs.allowedUnfreePackages = [
-        "1password-gui"
+        "obsidian"
+        "1password"
         "clion"
         "idea-ultimate"
         "pycharm-professional"
@@ -47,6 +48,11 @@ in
           iina
           mkalias
         ];
+
+      nixpkgs.allowedUnfreePackages = [
+        "raycast"
+        "the-unarchiver"
+      ];
 
       homebrew = {
         brews = [ "mas" ];
