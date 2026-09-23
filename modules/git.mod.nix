@@ -18,7 +18,7 @@ in
     { lib, ... }:
     {
       files.".config/git/config" = {
-        generator = lib.generators.toGitINI { };
+        generator = lib.generators.toGitINI;
         value = {
           user = {
             name = globals.userfullname.full;
