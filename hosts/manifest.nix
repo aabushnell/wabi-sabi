@@ -44,6 +44,10 @@
       class = "nixos";
       system = "x86_64-linux";
       extraModules = [
+        "desktop"
+        "kde"
+        "kizaemon"
+        "nvidia"
         "ssh"
       ];
       hostModule = ./kizaemon;
