@@ -24,13 +24,14 @@
         };
 
         # user-scoped global env vars
-        environment.sessionVariables = {
+        environment.sessionVariables =
           let
             inherit (config.xdg) data state;
           in
-          PYTHON_HISTORY = "${data.directory}/python/history";
-          LESSHISTFILE = "${state.directory}/less/history";
-        };
+          {
+            PYTHON_HISTORY = "${data.directory}/python/history";
+            LESSHISTFILE = "${state.directory}/less/history";
+          };
       };
     };
 }
