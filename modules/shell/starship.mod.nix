@@ -1,4 +1,4 @@
-{ ... }:
+{ mylib, ... }:
 let
   system =
     { pkgs, ... }:
