@@ -1,0 +1,88 @@
+{ ... }:
+let
+  system =
+    { pkgs, ... }:
+    {
+      environment.systemPackages = [ pkgs.kitty ];
+    };
+in
+{
+  flake.modules.nixos.kitty = system;
+  flake.modules.darwin.kitty = system;
+
+  flake.modules.home.kitty =
+    {
+      lib,
+      osConfig,
+      ...
+    }:
+    let
+      inherit (lib) optionalString;
+      isDarwin = osConfig.nixpkgs.hostPlatform.isDarwin;
+    in
+    {
+      xdg.config.files."kitty/kitty.conf".text = ''
+        font_family      JetbrainsMono Nerd Font Mono
+        bold_font        auto
+        italic_font      auto
+        bold_italic_font auto
+
+        font_size 14.0
+
+        tab_bar_style powerline
+        cursor_shape beam
+        disable_ligatures always
+
+        ${optionalString isDarwin ''
+          macos_option_as_alt yes
+          map alt+b send_text all \x1bb
+          map alt+f send_text all \x1bf
+        ''}
+
+        # gruv.conf
+        foreground               #ebdbb2
+        background               #272727
+        selection_foreground     #655b53
+        selection_background     #ebdbb2
+        url_color                #d65c0d
+
+        active_tab_foreground    #ebdbb2
+        active_tab_background    #83a597
+        inactive_tab_foreground  #ebdbb2
+        inactive_tab_background  #272727
+
+        # black
+        color0    #272727
+        color8    #928373
+
+        # red
+        color1    #cc231c
+        color9    #fb4833
+
+        # green
+        color2    #989719
+        color10   #b8ba25
+
+        # yellow
+        color3    #d79920
+        color11   #fabc2e
+
+        # blue
+        color4    #448488
+        color12   #83a597
+
+        # magenta
+        color5    #b16185
+        color13   #d3859a
+
+        # cyan
+        color6    #689d69
+        color14   #8ec07b
+
+        # white
+        color7    #a89983
+        color15   #ebdbb2
+      '';
+    };
+}
+

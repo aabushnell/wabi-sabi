@@ -1,4 +1,4 @@
-rec {
+{
   # user information
   username = "aaron";
   userfullname = {
@@ -7,13 +7,4 @@ rec {
     full = "Aaron Bushnell";
   };
   useremail = "aabushnell@gmail.com";
-
-  allTargetAttrs = {
-    # linux
-    x86_linux = "x86_64-linux";
-    # darwin
-    aarch64_darwin = "aarch64-darwin";
-  };
-
-  allTargets = builtins.attrValues allTargetAttrs;
 }

@@ -1,11 +1,16 @@
+{ globals, ... }:
 let
   hostname = "miyoshi";
-in {
-  nixpkgs.hostPlatform = "aarch64-darwin";
+in
+{
+  users.users.${globals.username} = {
+    name = globals.username;
+    home = "/Users/${globals.username}";
+  };
 
-  system.primaryUser = "aaron";
+  system.primaryUser = globals.username;
+  system.stateVersion = 6;
 
-  networking.hostName = hostname;
   networking.computerName = hostname;
   system.defaults.smb.NetBIOSName = hostname;
 }
