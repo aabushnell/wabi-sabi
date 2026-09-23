@@ -69,6 +69,24 @@ in
 
       shell.aliases = {
         g = "git";
+
+        ga = "git add";
+        gaa = "git add ./";
+        gap = "git add --patch";
+
+        gc = "git commit";
+        gcm = "git commit --message";
+
+        gcl = "git clone";
+
+        gd = "git diff";
+        gds = "git diff --staged";
+
+        gp = "git push";
+
+        gpl = "git pull";
+
+        gs = "git status";
       };
     };
 }
