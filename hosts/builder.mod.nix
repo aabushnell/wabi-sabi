@@ -9,6 +9,8 @@
 let
   inherit (lib.attrsets) attrByPath mapAttrsToList;
   inherit (lib.lists) concatMap map optional;
+  inherit (lib.modules) mkAliasOptionModule;
+  inherit (mylib) hjemify;
 
   manifest = import ./manifest.nix;
 
@@ -50,17 +52,23 @@ let
         )));
 
       systemMods =
-        concatMap (w: w.system) wanted ++
-          map (only spec.class) (spec.systemModules or []);
+        concatMap (w: w.system) wanted
+        ++ map (only spec.class) (spec.systemModules or []);
 
       homeMods =
-        concatMap (w: w.home) wanted ++
-          map (only "home") (spec.homeModules or []);
+        map hjemify (
+          concatMap (w: w.home) wanted
+          ++ map (only "home") (spec.homeModules or [])
+        );
 
       hjemBridge =
         optional (homeMods != [ ]) {
-          imports = [ inputs.hjem.${spec.class + "Modules"}.default ];
-          hjem = {
+          imports = [
+            inputs.hjem.${spec.class + "Modules"}.default
+            (mkAliasOptionModule [ "home" ] [ "hjem" ])
+          ];
+
+          home = {
             clobberByDefault = true;
             users.${spec.user or globals.username}.imports = homeMods;
           };
