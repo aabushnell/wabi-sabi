@@ -1,8 +1,7 @@
 { self, ... }:
 let
   inherit (builtins) isAttrs removeAttrs;
-in
-{
+
   hjemify =
     m:
     if isAttrs m then
@@ -13,4 +12,7 @@ in
       }
     else
       m;
+in
+{
+  inherit hjemify;
 }
