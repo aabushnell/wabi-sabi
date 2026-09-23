@@ -1,6 +1,6 @@
 { ... }:
 {
-  flake.modules.darwin.finder =
+  flake.modules.darwin.darwin-finder =
     { ... }:
     {
       system.defaults.finder = {
