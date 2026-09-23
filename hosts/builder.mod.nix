@@ -57,10 +57,8 @@ let
         ++ map (only spec.class) (spec.systemModules or []);
 
       homeMods =
-        map hjemify (
-          concatMap (w: w.home) wanted
-          ++ map (only "home") (spec.homeModules or [])
-        );
+        concatMap (w: w.home) wanted
+        ++ map (only "home") (spec.homeModules or []);
 
       hjemBridge =
         optional (homeMods != [ ]) {
