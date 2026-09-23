@@ -18,8 +18,24 @@
 {
   commonModules = [
     "base"
+
     "unfree"
-    "theme"
+
+    "apps"
+    "dev"
+    "fonts"
+    "gh"
+    "git"
+    "kitty"
+    "rust"
+    "xdg"
+
+    "direnv"
+    "env"
+    "nushell"
+    "shell-utils"
+    "starship"
+    "zsh"
   ];
 
   hosts = {
@@ -28,9 +44,7 @@
       class = "nixos";
       system = "x86_64-linux";
       extraModules = [
-        "desktop"
-        "kde"
-        "nvidia"
+        "ssh"
       ];
       hostModule = ./kizaemon;
     };
@@ -39,8 +53,11 @@
       class = "darwin";
       system = "aarch64-darwin";
       extraModules = [
-        "desktop"
-        "brew"
+        "darwin-dock"
+        "darwin-finder"
+        "homebrew"
+        "security"
+        "sudo"
       ];
       hostModule = ./miyoshi;
     };
