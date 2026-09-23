@@ -15,10 +15,10 @@ let
     };
 in
 {
-  flake.modules.nixos.utils = system;
-  flake.modules.darwin.utils = system;
+  flake.modules.nixos.shell-utils = system;
+  flake.modules.darwin.shell-utils = system;
 
-  flake.modules.home.utils =
+  flake.modules.home.shell-utils =
     {
       lib,
       options,
