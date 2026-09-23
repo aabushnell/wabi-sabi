@@ -1,9 +1,16 @@
 { self, ... }:
+let
+  inherit (builtins) isAttrs removeAttrs;
+in
 {
   hjemify =
     m:
-    if builtins.isAttrs m then
-      m // { _class = "hjem"; }
+    if isAttrs m then
+      (removeAttrs m [ "_class" ])
+      // {
+        _class = "hjem";
+        imports = map hjemify (m.imports or [ ]);
+      }
     else
-      { _class = "hjem"; imports = [ m ]; };
+      m;
 }
