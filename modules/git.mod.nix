@@ -66,5 +66,9 @@ in
           };
         };
       };
+
+      shell.aliases = {
+        g = "git";
+      };
     };
 }
