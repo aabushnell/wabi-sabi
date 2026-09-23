@@ -1,5 +1,6 @@
 {
   inputs,
+  self,
   config,
   lib,
   mylib,
@@ -16,7 +17,7 @@ let
 
   facet =
     class: name:
-    attrByPath [ class name ] null config.flake.modules;
+    attrByPath [ class name ] null self.modules;
 
   only =
     class: name:
