@@ -48,6 +48,7 @@
         "kde"
         "kizaemon"
         "nvidia"
+        "openssh"
         "ssh"
       ];
       hostModule = ./kizaemon;
