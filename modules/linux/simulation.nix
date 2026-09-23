@@ -235,7 +235,7 @@ in
       # Default Gateway
       networking.defaultGateway = {
         address = "192.168.1.1";
-        interface = "eth0";
+        interface = "ethH1";
       };
     };
   };
@@ -266,7 +266,7 @@ in
       # Default Gateway
       networking.defaultGateway = {
         address = "192.168.2.1";
-        interface = "eth3";
+        interface = "ethH2";
       };
     };
   };

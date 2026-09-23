@@ -5,6 +5,7 @@
   imports = [
     ./nvidia.nix
     ./kde.nix
+    ./simulation.nix
     ../base.nix
   ];
 
@@ -25,6 +26,13 @@
     # use the example session manager (no others are packaged yet so this is enabled by default,
     # no need to redefine it in your config for now)
     #media-session.enable = true;
+  };
+
+  services.openssh = {
+    enable = true;
+    settings = {
+      PasswordAuthentication = false;
+    };
   };
 
   # Enable networking
@@ -53,6 +61,9 @@
     isNormalUser = true;
     description = globals.userfullname.full;
     extraGroups = [ "networkmanager" "wheel" ];
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIARuTySTotbUM8FuYnslxKzgfwqhWqmhuuJs0h8UK1l7"
+    ];
     packages = with pkgs; [
       kdePackages.kate
     ];
@@ -61,13 +72,18 @@
   security.sudo.enable = true;
 
   environment.systemPackages = with pkgs; [
+    clang
+    lldb
     gcc
     kitty
     vim
     wget
     rmtrash
+    uv
     kdePackages.ksshaskpass
   ];
+
+  programs.nix-ld.enable = true;
 
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
