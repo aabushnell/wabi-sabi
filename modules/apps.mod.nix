@@ -42,7 +42,6 @@ in
       environment.systemPackages = with pkgs; [
           # darwin-only nixpkgs apps
           itsycal
-          raycast
           stats
           the-unarchiver
           iina
@@ -65,6 +64,7 @@ in
           "microsoft-word"
           "microsoft-powerpoint"
           "private-internet-access"
+          "sol"
           "stremio"
           "zoom"
         ];
