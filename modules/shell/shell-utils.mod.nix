@@ -44,10 +44,21 @@ in
         # bat
         cat = "bat";
         less = "bat --plain";
+
         # lsd
-        ls = "lsd";
+        ls = "lsd --group-directories-first";
+        l = "lsd --group-directories-first --long";
+        ll = "lsd --group-directories-first --long --total-size";
+        la = "lsd --group-directories-first --long --almost-all";
+        lla = "lsd --group-directories-first --long --total-size --almost-all";
+        lt = "lsd --group-directories-first --tree";
+        lat = "lsd --group-directories-first --tree --almost-all";
+        llt = "lsd --group-directories-first --tree --long --total-size";
+        llat = "lsd --group-directories-first --tree --long --total-size --almost-all";
+
         # rmtrash
         rm = "rmtrash";
+
         # zoxide
         cd = "z";
       };
