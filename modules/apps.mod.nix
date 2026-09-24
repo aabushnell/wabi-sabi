@@ -74,5 +74,10 @@ in
           "Pixelmator Pro" = 1289583905;
         };
       };
+
+      # stats - disable auto-update
+      system.defaults.CustomUserPreferences."eu.exelban.Stats" = {
+        "update-interval" = "never";
+      };
     };
 }
