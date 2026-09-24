@@ -24,8 +24,22 @@
         ];
 
         persistent-others = [
-          "/Users/${globals.username}/Documents"
-          "/Users/${globals.username}/Downloads"
+          {
+            folder = {
+              path = "/Users/${globals.username}/Documents";
+              arrangement = "name";
+              displayas = "folder";
+              showas = "list";
+            };
+          }
+          {
+            folder = {
+              path = "/Users/${globals.username}/Downloads";
+              arrangement = "date-added";
+              displayas = "stack";
+              showas = "fan";
+            };
+          }
         ];
 
         # hot corners: 1 = disabled
