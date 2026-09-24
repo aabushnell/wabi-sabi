@@ -5,12 +5,13 @@ let
     {
       environment.systemPackages = with pkgs; [
         bat
-        zoxide
-        lsd
-        fzf
         btop
+        fzf
+        ncdu
+        lsd
         rmtrash
         trash-cli
+        zoxide
       ];
     };
 in
