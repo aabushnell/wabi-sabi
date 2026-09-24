@@ -62,7 +62,6 @@ in
           "balenaetcher"
           "citrix-workspace"
           "microsoft-word"
-          "microsoft-powerpoint"
           "private-internet-access"
           "sol"
           "stremio"
