@@ -5,7 +5,7 @@ let
     {
       programs.zsh = {
         enable = true;
-        enableCompletion = false;
+        enableGlobalCompInit = false;
       };
 
       environment.shells = [ pkgs.zsh ];
@@ -53,27 +53,27 @@ in
           '')
 
           (mkOrder mylib.shell.rcOrder.core ''
-
             export ZSH_DISABLE_COMPFIX=true
-            export ZSH=${pkgs.oh-my-zsh}/share/oh-my-zsh
-            source $ZSH/oh-my-zsh.sh
 
-            # zsh-autocomplete: zstyles must be set before sourcing
+            # zsh-autocomplete:
+            #   zstyles must be set before sourcing
+            #   must be sourced before compinit/compdef calls
             zstyle ':autocomplete:*complete*:*' insert-unambiguous yes
             zstyle ':autocomplete:*history*:*' insert-unambiguous yes
             zstyle ':autocomplete:menu-search:*' insert-unambiguous yes
             zstyle ':completion:*:*' matcher-list 'm:{[:lower:]-}={[:upper:]_}' '+r:|[.]=**'
             source ${zsh-autocomplete}/zsh-autocomplete.plugin.zsh
 
+            # oh-my-zsh init
+            export ZSH=${pkgs.oh-my-zsh}/share/oh-my-zsh
+            source $ZSH/oh-my-zsh.sh
           '')
 
           (mkOrder mylib.shell.rcOrder.aliases
             (mylib.shell.renderAliases.zsh (config.shell.aliases or { })))
 
           (mkOrder mylib.shell.rcOrder.late ''
-
             source ${pkgs.zsh-syntax-highlighting}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
           '')
 
           (mkOrder mylib.shell.rcOrder.final ''
