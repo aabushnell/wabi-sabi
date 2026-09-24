@@ -58,8 +58,8 @@
       class = "darwin";
       system = "aarch64-darwin";
       extraModules = [
-        "darwin-dock"
-        "darwin-finder"
+        "dock"
+        "finder"
         "homebrew"
         "security"
         "sudo"

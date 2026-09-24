@@ -1,6 +1,6 @@
 { globals, ... }:
 {
-  flake.modules.darwin.darwin-dock =
+  flake.modules.darwin.dock =
     { ... }:
     {
       system.defaults.dock = {
