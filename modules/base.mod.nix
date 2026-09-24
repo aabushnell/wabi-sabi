@@ -13,6 +13,7 @@ let
           "flakes"
           "pipe-operators"
         ];
+        auto-optimise-store = true;
       };
 
       # core packages *ONLY*
