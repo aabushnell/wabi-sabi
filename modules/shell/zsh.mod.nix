@@ -48,16 +48,13 @@ in
         xdg.config.files."zsh/.zshrc".text = config.rc.zsh;
 
         rc.zsh = mkMerge [
-          (mkOrder mylib.shell.rcOrder.core ''
-            # completion: rebuild the dump daily, use the cache otherwise
-            typeset -i updated_at=$(date +'%j' -r ~/.zcompdump 2>/dev/null || stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)
-            if [ $(date +'%j') != $updated_at ]; then
-              compinit -i
-            else
-              compinit -C -i
-            fi
+          (mkOrder mylib.shell.rcOrder.early ''
+            zmodload zsh/zprof
+          '')
 
-            # oh-my-zsh, defaults
+          (mkOrder mylib.shell.rcOrder.core ''
+
+            export ZSH_DISABLE_COMPFIX=true
             export ZSH=${pkgs.oh-my-zsh}/share/oh-my-zsh
             source $ZSH/oh-my-zsh.sh
 
@@ -67,11 +64,20 @@ in
             zstyle ':autocomplete:menu-search:*' insert-unambiguous yes
             zstyle ':completion:*:*' matcher-list 'm:{[:lower:]-}={[:upper:]_}' '+r:|[.]=**'
             source ${zsh-autocomplete}/zsh-autocomplete.plugin.zsh
+
           '')
+
           (mkOrder mylib.shell.rcOrder.aliases
             (mylib.shell.renderAliases.zsh (config.shell.aliases or { })))
+
           (mkOrder mylib.shell.rcOrder.late ''
+
             source ${pkgs.zsh-syntax-highlighting}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+          '')
+
+          (mkOrder mylib.shell.rcOrder.final ''
+            [[ -z "''${ZSH_PROF:-}" ]] || zprof
           '')
         ];
       };
