@@ -24,6 +24,7 @@ in
       aliases = 800;   # rendered alias table
       tools   = 1000;  # tool integrations
       late    = 1400;  # syntax highlighting
+      final   = 2000;  # absolute last to load
     };
   };
 }
