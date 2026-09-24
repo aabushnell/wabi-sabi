@@ -1,4 +1,4 @@
-
+#
 # Fields:
 #   commonModules     modules shared by all hosts
 #   roles             named module lists, e.g. roles.server = [ ... ]
@@ -14,7 +14,7 @@
 #   systemModules     additional modules that load only `system` facets
 #   homeModules       additional modules that load only `home` facets
 #   hostModule        path to host data module directory
-
+#
 {
   commonModules = [
     "base"

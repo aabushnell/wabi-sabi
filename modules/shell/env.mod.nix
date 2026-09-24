@@ -1,5 +1,4 @@
 { ... }:
-
 {
   flake.modules.home.env =
     { lib, config, ... }:

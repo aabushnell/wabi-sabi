@@ -1,3 +1,4 @@
+# lib bootstrap
 lib:
 let
   inherit (lib.attrsets) attrNames genAttrs recursiveUpdate;

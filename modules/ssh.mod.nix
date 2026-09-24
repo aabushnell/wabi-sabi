@@ -12,6 +12,7 @@
       # macos runs its own launchd-managed
       # ssh-agent with SSH_AUTH_SOCK already exported;
       # nothing to start here
+      # TODO: fill or remove
     };
 
   flake.modules.home.ssh =

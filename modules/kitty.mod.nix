@@ -11,11 +11,7 @@ in
   flake.modules.darwin.kitty = system;
 
   flake.modules.home.kitty =
-    {
-      lib,
-      osConfig,
-      ...
-    }:
+    { lib, osConfig, ... }:
     let
       inherit (lib) optionalString;
       isDarwin = osConfig.nixpkgs.hostPlatform.isDarwin;
@@ -85,4 +81,3 @@ in
       '';
     };
 }
-

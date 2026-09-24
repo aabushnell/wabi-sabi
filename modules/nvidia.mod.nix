@@ -9,7 +9,7 @@
         modesetting.enable = true;
         powerManagement.enable = false;
         powerManagement.finegrained = false;
-        open = false; # proprietary kernel modules
+        open = false; # proprietary
         nvidiaSettings = true;
         package = config.boot.kernelPackages.nvidiaPackages.stable;
       };

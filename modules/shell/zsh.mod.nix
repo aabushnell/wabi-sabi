@@ -17,12 +17,7 @@ in
   flake.modules.darwin.zsh = system;
 
   flake.modules.home.zsh =
-    {
-      lib,
-      config,
-      pkgs,
-      ...
-    }:
+    { lib, config, pkgs, ... }:
     let
       inherit (lib) mkOption mkOrder mkMerge types;
 

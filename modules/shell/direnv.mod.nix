@@ -14,12 +14,7 @@ in
   flake.modules.darwin.direnv = system;
 
   flake.modules.home.direnv =
-    {
-      lib,
-      options,
-      pkgs,
-      ...
-    }:
+    { lib, options, pkgs, ... }:
     let
       inherit (lib) mkIf mkOrder;
     in
@@ -46,4 +41,3 @@ in
         '');
     };
 }
-

@@ -1,5 +1,4 @@
 { mylib, ... }:
-
 {
   flake.modules.home.xdg =
     { config, ... }:

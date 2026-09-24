@@ -19,12 +19,7 @@ in
   flake.modules.darwin.shell-utils = system;
 
   flake.modules.home.shell-utils =
-    {
-      lib,
-      options,
-      pkgs,
-      ...
-    }:
+    { lib, options, pkgs, ... }:
     let
       inherit (lib) mkIf mkOrder;
 

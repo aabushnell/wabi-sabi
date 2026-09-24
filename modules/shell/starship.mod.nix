@@ -11,12 +11,7 @@ in
   flake.modules.darwin.starship = system;
 
   flake.modules.home.starship =
-    {
-      lib,
-      options,
-      pkgs,
-      ...
-    }:
+    { lib, options, pkgs, ... }:
     let
       inherit (lib) mkIf mkOrder;
 
@@ -393,8 +388,6 @@ in
             format = "[$symbol nix⎪$state⎪]($style) [$name](italic dimmed white)";
             impure_msg = "[⌽](bold dimmed red)";
             pure_msg = "[⌾](bold dimmed green)";
-            # fixed: your old config said "ellow", which starship would
-            # fail to parse as a style
             unknown_msg = "[◌](bold dimmed yellow)";
           };
 

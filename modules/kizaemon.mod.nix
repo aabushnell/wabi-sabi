@@ -27,7 +27,6 @@
           "networkmanager"
           "wheel"
         ];
-        # shell comes from users.defaultUserShell in the base facet
       };
     };
 }

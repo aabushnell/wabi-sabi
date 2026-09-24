@@ -25,12 +25,7 @@ in
   flake.modules.darwin.dev = shared;
 
   flake.modules.home.dev =
-    {
-      lib,
-      options,
-      config,
-      ...
-    }:
+    { lib, options, config, ... }:
     let
       inherit (lib) mkIf mkOrder;
     in
@@ -48,4 +43,3 @@ in
       '');
     };
 }
-
