@@ -19,7 +19,7 @@
     { lib, pkgs, ... }:
     lib.mkMerge [
       # kizaemon
-      (lib.mkIf pkgs.stdenv.isLinux {
+      (lib.mkIf pkgs.stdenv.hostPlatform.isLinux {
         files.".ssh/config".text = ''
           Host github.com
             HostName github.com
