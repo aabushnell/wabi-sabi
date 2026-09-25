@@ -58,7 +58,7 @@ in
         llat = "lsd --group-directories-first --tree --long --total-size --almost-all";
 
         # rmtrash
-        rm = "rmtrash -rv";
+        rm = "rmtrash -r";
 
         # zoxide
         cd = "z";
