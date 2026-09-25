@@ -49,7 +49,6 @@ in
         ];
 
       nixpkgs.allowedUnfreePackages = [
-        "raycast"
         "the-unarchiver"
       ];
 
