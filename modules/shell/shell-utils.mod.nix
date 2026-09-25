@@ -42,8 +42,9 @@ in
 
       shell.aliases = {
         # bat
-        cat = "bat";
+        cat = "bat --paging=never";
         less = "bat --plain";
+        c = "bat --style=changes,header-filename,header-filesize,numbers,snip";
 
         # lsd
         ls = "lsd --group-directories-first";
