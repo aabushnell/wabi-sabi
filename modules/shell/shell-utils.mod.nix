@@ -62,6 +62,7 @@ in
 
         # zoxide
         cd = "z";
+        cdi = "zi";
       };
 
       rc.zsh = mkIf (options ? rc.zsh)
