@@ -26,6 +26,7 @@
     "fonts"
     "gh"
     "git"
+    "helium"
     "kitty"
     "rust"
     "xdg"
