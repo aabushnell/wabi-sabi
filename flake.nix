@@ -61,6 +61,10 @@
       url = "github:amaanq/helium-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    ublock = {
+      url = "github:imputnet/uBlock";
+      flake = false;
+    };
   };
 
   outputs =
