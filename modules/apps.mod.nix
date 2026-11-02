@@ -18,7 +18,7 @@ let
         "obsidian"
         "1password"
         "clion"
-        "idea"
+        "intellij-idea"
         # "pycharm"
       ];
     };
