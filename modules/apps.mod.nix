@@ -1,4 +1,4 @@
-{ ... }:
+{ inputs, ... }:
 let
   shared =
     { pkgs, ... }:
@@ -36,17 +36,22 @@ in
 
   flake.modules.darwin.apps =
     { pkgs, ... }:
+    let
+      legacyPkgs = inputs.nixpkgs-legacy.legacyPackages.${pkgs.stdenv.hostPlatform.system};
+    in
     {
       imports = [ shared ];
 
       environment.systemPackages = with pkgs; [
-          # darwin-only nixpkgs apps
+        # darwin-only nixpkgs apps
           itsycal
-          stats
           the-unarchiver
           iina
           mkalias
-        ];
+      ] ++ [
+        # darwin legacy version apps
+        legacyPkgs.stats
+      ];
 
       nixpkgs.allowedUnfreePackages = [
         "the-unarchiver"
