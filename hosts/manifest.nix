@@ -61,6 +61,7 @@
       system = "aarch64-darwin";
       extraModules = [
         "dock"
+        "docker"
         "finder"
         "homebrew"
         "security"
