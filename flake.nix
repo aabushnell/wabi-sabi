@@ -15,6 +15,9 @@
     # single-channel default
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
+    # legacy fallback
+    nixpkgs-legacy.url = "github:NixOS/nixpkgs/aaff8c16d7fc04991cac6245bee1baa31f72b1e1";
+
     # general system tools
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
