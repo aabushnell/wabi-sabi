@@ -1,6 +1,6 @@
 { ... }:
 {
-  flake.modules.home.env =
+  flake.modules.home.vars =
     { lib, config, ... }:
     let
       inherit (lib) mkOption types;
@@ -21,16 +21,6 @@
         shell.aliases = {
           grep = "grep --color=auto";
         };
-
-        # user-scoped global env vars
-        environment.sessionVariables =
-          let
-            inherit (config.xdg) data state;
-          in
-          {
-            PYTHON_HISTORY = "${data.directory}/python/history";
-            LESSHISTFILE = "${state.directory}/less/history";
-          };
       };
     };
 }

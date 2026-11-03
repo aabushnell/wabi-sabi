@@ -19,6 +19,7 @@
   commonModules = [
     "base"
 
+    "env"
     "unfree"
 
     "apps"
@@ -32,10 +33,10 @@
     "xdg"
 
     "direnv"
-    "env"
     "nushell"
     "shell-utils"
     "starship"
+    "vars"
     "zsh"
   ];
 

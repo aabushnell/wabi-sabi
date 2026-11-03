@@ -19,7 +19,7 @@ in
       inherit (lib) mkIf mkOrder;
     in
     {
-      environment.sessionVariables = {
+      my.env.session = {
         DIRENV_LOG_FORMAT = "";
       };
 

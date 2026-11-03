@@ -34,7 +34,7 @@ in
     {
       xdg.config.files."bat/config".text = "--theme=gruvbox-dark";
 
-      environment.sessionVariables = {
+      my.env.session = {
         # bat
         MANPAGER = "bat --plain";
         PAGER = "bat --plain";

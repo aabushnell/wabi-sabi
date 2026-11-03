@@ -28,7 +28,7 @@
             AddKeysToAgent yes
         '';
 
-        environment.sessionVariables = {
+        my.env.session = {
           SSH_ASKPASS = "${pkgs.kdePackages.ksshaskpass}/bin/ksshaskpass";
           SSH_ASKPASS_REQUIRE = "prefer";
         };

@@ -7,7 +7,7 @@
       xdg = config.xdg;
     in
     {
-      environment.sessionVariables = {
+      my.env.fixed = {
         XDG_CONFIG_HOME = xdg.config.directory;
         XDG_CACHE_HOME = xdg.cache.directory;
         XDG_DATA_HOME = xdg.data.directory;
