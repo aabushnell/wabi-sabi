@@ -64,7 +64,6 @@ in
           "firefox"
           "anki"
           "balenaetcher"
-          "citrix-workspace"
           "microsoft-word"
           "private-internet-access"
           "sol"
