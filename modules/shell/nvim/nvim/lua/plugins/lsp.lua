@@ -7,6 +7,30 @@ vim.diagnostic.config({
 	virtual_text = { spacing = 4, source = "if_many", prefix = "●" },
 })
 
+vim.lsp.config("*", { capabilities = capabilities })
+
+vim.lsp.config("clangd", {
+	cmd = {
+		vim.fn.exepath("clangd"),
+		"--query-driver=/nix/store/*/bin/clang++",
+		"--background-index",
+		"--clang-tidy",
+	},
+})
+
+vim.lsp.config("lua_ls", {
+	settings = {
+		Lua = {
+			workspace = { checkThirdParty = false },
+			completion = { callSnippet = "Replace" },
+			diagnostics = { globals = { "vim" } },
+		},
+	},
+})
+
+vim.enabled = nil
+vim.lsp.enable({ "clangd", "nil_ls", "lua_ls" })
+
 vim.api.nvim_create_autocmd("LspAttach", {
 	group = vim.api.nvim_create_augroup("user_lsp_attach", { clear = true }),
 	callback = function(ev)
@@ -27,29 +51,4 @@ vim.api.nvim_create_autocmd("LspAttach", {
 			vim.diagnostic.jump({ count = -1, float = true })
 		end, "Prev diagnostic")
 	end,
-})
-
-local lspconfig = require("lspconfig")
-
-lspconfig.clangd.setup({
-	capabilities = capabilities,
-	cmd = {
-		vim.fn.exepath("clangd"),
-		"--query-driver=/nix/store/*/bin/clang++",
-		"--background-index",
-		"--clang-tidy",
-	},
-})
-
-lspconfig.nil_ls.setup({ capabilities = capabilities })
-
-lspconfig.lua_ls.setup({
-	capabilities = capabilities,
-	settings = {
-		Lua = {
-			workspace = { checkThirdParty = false },
-			completion = { callSnippet = "Replace" },
-			diagnostics = { globals = { "vim" } },
-		},
-	},
 })
