@@ -50,6 +50,7 @@
         "kde"
         "kizaemon"
         "nvidia"
+        "nvim"
         "openssh"
         "ssh"
       ];

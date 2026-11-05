@@ -1,0 +1,55 @@
+local capabilities = require("blink.cmp").get_lsp_capabilities()
+
+vim.diagnostic.config({
+	severity_sort = true,
+	underline = true,
+	float = { border = "rounded", source = true },
+	virtual_text = { spacing = 4, source = "if_many", prefix = "●" },
+})
+
+vim.api.nvim_create_autocmd("LspAttach", {
+	group = vim.api.nvim_create_augroup("user_lsp_attach", { clear = true }),
+	callback = function(ev)
+		local map = function(mode, lhs, rhs, desc)
+			vim.keymap.set(mode, lhs, rhs, { buffer = ev.buf, desc = desc })
+		end
+		map("n", "gd", vim.lsp.buf.definition, "Goto definition")
+		map("n", "gD", vim.lsp.buf.declaration, "Goto declaration")
+		map("n", "gy", vim.lsp.buf.type_definition, "Goto type definition")
+		map("n", "gK", vim.lsp.buf.signature_help, "Signature help")
+		map({ "n", "x" }, "<leader>ca", vim.lsp.buf.code_action, "Code action")
+		map("n", "<leader>cr", vim.lsp.buf.rename, "Rename")
+		map("n", "<leader>cd", vim.diagnostic.open_float, "Line diagnostics")
+		map("n", "]d", function()
+			vim.diagnostic.jump({ count = 1, float = true })
+		end, "Next diagnostic")
+		map("n", "[d", function()
+			vim.diagnostic.jump({ count = -1, float = true })
+		end, "Prev diagnostic")
+	end,
+})
+
+local lspconfig = require("lspconfig")
+
+lspconfig.clangd.setup({
+	capabilities = capabilities,
+	cmd = {
+		vim.fn.exepath("clangd"),
+		"--query-driver=/nix/store/*/bin/clang++",
+		"--background-index",
+		"--clang-tidy",
+	},
+})
+
+lspconfig.nil_ls.setup({ capabilities = capabilities })
+
+lspconfig.lua_ls.setup({
+	capabilities = capabilities,
+	settings = {
+		Lua = {
+			workspace = { checkThirdParty = false },
+			completion = { callSnippet = "Replace" },
+			diagnostics = { globals = { "vim" } },
+		},
+	},
+})
