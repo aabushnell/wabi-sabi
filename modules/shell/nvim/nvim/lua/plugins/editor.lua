@@ -1,9 +1,6 @@
 require("mini.icons").setup()
 MiniIcons.mock_nvim_web_devicons()
 
-require("mini.pairs").setup({ modes = { insert = true, command = true, terminal = false } })
-require("mini.ai").setup({ n_lines = 500 })
-
 require("flash").setup({})
 local map = vim.keymap.set
 map({ "n", "x", "o" }, "s", function()

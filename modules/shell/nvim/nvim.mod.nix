@@ -39,6 +39,7 @@ let
         gruvbox-nvim
         noice-nvim
         nui-nvim
+        nvim-web-devicons
 
         # lsp
         nvim-lspconfig
