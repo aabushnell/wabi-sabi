@@ -4,15 +4,21 @@ require("snacks").setup({
 	indent = { enabled = true },
 	input = { enabled = true },
 	notifier = { enabled = true, timeout = 3000 },
-	picker = { enabled = true },
+	picker = {
+		enabled = true,
+		matcher = {
+			frecency = true,
+		},
+	},
 	quickfile = { enabled = true },
+	statuscolumn = { enabled = true },
 	words = { enabled = true },
 })
 
 local map = vim.keymap.set
 local p = Snacks.picker
 
-map("n", "<leader><space>", p.files, { desc = "Find files" })
+map("n", "<leader><space>", p.smart, { desc = "Smart find files" })
 map("n", "<leader>ff", p.files, { desc = "Find files" })
 map("n", "<leader>fb", p.buffers, { desc = "Buffers" })
 map("n", "<leader>fr", p.recent, { desc = "Recent files" })

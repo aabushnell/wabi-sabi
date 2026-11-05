@@ -9,14 +9,17 @@ vim.diagnostic.config({
 
 vim.lsp.config("*", { capabilities = capabilities })
 
-vim.lsp.config("clangd", {
-	cmd = {
-		vim.fn.exepath("clangd"),
-		"--query-driver=/nix/store/*/bin/clang++",
-		"--background-index",
-		"--clang-tidy",
-	},
-})
+if vim.fn.executable("clangd") == 1 then
+	vim.lsp.config("clangd", {
+		cmd = {
+			vim.fn.exepath("clangd"),
+			"--query-driver=/nix/store/*/bin/clang++",
+			"--background-index",
+			"--clang-tidy",
+		},
+	})
+	vim.lsp.enable("clangd")
+end
 
 vim.lsp.config("lua_ls", {
 	settings = {
@@ -29,7 +32,7 @@ vim.lsp.config("lua_ls", {
 })
 
 vim.enabled = nil
-vim.lsp.enable({ "clangd", "nil_ls", "lua_ls" })
+vim.lsp.enable({ "nil_ls", "lua_ls" })
 
 vim.api.nvim_create_autocmd("LspAttach", {
 	group = vim.api.nvim_create_augroup("user_lsp_attach", { clear = true }),

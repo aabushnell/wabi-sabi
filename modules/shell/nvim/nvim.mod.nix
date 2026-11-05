@@ -1,7 +1,20 @@
 { lib, ... }:
 let
+  inherit (lib) makeBinPath;
+
   mkNvim =
     pkgs:
+    let
+      tools = with pkgs; [
+        ripgrep
+        fd
+        fzf
+        stylua
+        nil
+        lua-language-server
+      ];
+
+    in
     pkgs.wrapNeovimUnstable pkgs.neovim-unwrapped {
       withPython3 = false;
       withRuby = false;
@@ -20,6 +33,7 @@ let
 
         # picker
         snacks-nvim
+        sqlite-lua
 
         # keymaps
         which-key-nvim
@@ -49,14 +63,11 @@ let
         "--prefix"
         "PATH"
         ":"
-        (lib.makeBinPath (with pkgs; [
-          ripgrep
-          fd
-          fzf
-          stylua
-          nil
-          lua-language-server
-        ]))
+        (makeBinPath tools)
+
+        "--set"
+        "SQLITE_CLIB_PATH"
+        "${pkgs.sqlit}/lib/libsqlite3${pkgs.stdenv.hostPlatform.extensions.sharedLibrary}"
       ];
     };
 in
