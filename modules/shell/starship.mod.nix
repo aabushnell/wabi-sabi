@@ -352,6 +352,12 @@ in
             format = " elm [$symbol($version )]($style)";
           };
 
+          gcloud = {
+            format = " [gcloud](italic) [☁️ $project]($style)";
+            style = "bold blue";
+            detect_env_vars = [ "STARSHIP_GCLOUD" ];
+          };
+
           golang = {
             symbol = "∩ ";
             format = " go [$symbol($version )]($style)";
