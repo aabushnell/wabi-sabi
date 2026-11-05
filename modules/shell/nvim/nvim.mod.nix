@@ -67,7 +67,7 @@ let
 
         "--set"
         "SQLITE_CLIB_PATH"
-        "${pkgs.sqlit}/lib/libsqlite3${pkgs.stdenv.hostPlatform.extensions.sharedLibrary}"
+        "${pkgs.sqlite}/lib/libsqlite3${pkgs.stdenv.hostPlatform.extensions.sharedLibrary}"
       ];
     };
 in
