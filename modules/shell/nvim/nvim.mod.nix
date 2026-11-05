@@ -69,7 +69,7 @@ in
     environment.systemPackages = [ (mkNvim pkgs) ];
   };
 
-  flake.modules.hjem.nvim = _: {
+  flake.modules.home.nvim = _: {
     files.".config/nvim".source = ./nvim;
   };
 }
