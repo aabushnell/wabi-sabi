@@ -68,7 +68,7 @@ enable_if("clangd", "clangd", {
 		vim.fn.exepath("clangd"),
 		"--background-index",
 		"--clang-tidy",
-		"--query-driver=/nix/store/*/bin/gcc,/nix/store/*/bin/g++,/nix/store/*/bin/clang++,/nix/store/*-riscv64-none-elf-gcc-*/bin/riscv64-none-elf-gcc",
+		"--query-driver=/nix/store/*/bin/gcc,/nix/store/*/bin/g++,/nix/store/*/bin/clang++,/nix/store/*-riscv64-none-elf-gcc-*/bin/riscv64-none-elf-gcc,**/musl_installation/bin/musl-gcc",
 	},
 })
 
