@@ -81,6 +81,21 @@ in
   };
 
   flake.modules.home.nvim = _: {
-    files.".config/nvim".source = ./nvim;
+    # adapted from lazyvim defaults
+    files.".config/nvim/init.lua".text = ''
+      require("config.options")
+      require("config.keymaps")
+      require("config.autocmds")
+
+      vim.cmd.colorscheme("gruvbox")
+
+      require("plugins.treesitter")
+      require("plugins.completion")
+      require("plugins.snacks")
+      require("plugins.editor")
+      require("plugins.ui")
+      require("plugins.lsp")
+    '';
+    files.".config/nvim/lua".source = ./lua;
   };
 }
