@@ -13,9 +13,9 @@ if vim.fn.executable("clangd") == 1 then
 	vim.lsp.config("clangd", {
 		cmd = {
 			vim.fn.exepath("clangd"),
-			"--query-driver=/nix/store/*/bin/clang++",
 			"--background-index",
 			"--clang-tidy",
+			"--query-driver=/nix/store/*/bin/gcc,/nix/store/*/bin/g++,/nix/store/*/bin/clang++,/nix/store/*-riscv64-none-elf-gcc-*/bin/riscv64-none-elf-gcc",
 		},
 	})
 	vim.lsp.enable("clangd")
