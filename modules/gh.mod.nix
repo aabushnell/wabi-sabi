@@ -30,7 +30,7 @@ in
         generator = (pkgs.formats.yaml { }).generate "gh-hosts.yml";
         value = {
           "github.com" = {
-            user = globals.username;
+            user = globals.github;
             users.${globals.username} = null;
           };
         };

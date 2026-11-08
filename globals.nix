@@ -8,4 +8,6 @@
   };
 
   useremail = "aabushnell@gmail.com";
+
+  github = "aabushnell";
 }
