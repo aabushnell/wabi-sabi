@@ -6,7 +6,7 @@ let
     services.tailscale.enable = true;
 
     environment.systemPackages = [ pkgs.tailscale ];
-  }
+  };
 in
 {
   flake.modules.nixos.tailscale =
