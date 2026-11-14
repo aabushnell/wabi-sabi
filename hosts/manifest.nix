@@ -7,7 +7,7 @@
 # Per-host fields:
 #   class             "nixos" | "darwin"           (required)
 #   system            host platform string         (required)
-#   user              login user for hjem (default: globals.username)
+#   user              login user for hjem          (default: globals.username)
 #
 #   modules           module list override
 #   extraModules      additional modules appended to `commonModules`
@@ -30,8 +30,10 @@
     "helium"
     "kitty"
     "rust"
+    "tailscale"
     "xdg"
 
+    # shell
     "direnv"
     "nushell"
     "shell-utils"
