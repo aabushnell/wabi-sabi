@@ -82,7 +82,7 @@ in
 
   flake.modules.home.nvim = _: {
     # adapted from lazyvim defaults
-    files.".config/nvim/init.lua".text = ''
+    xdg.config.files."nvim/init.lua".text = ''
       require("config.options")
       require("config.keymaps")
       require("config.autocmds")
@@ -96,6 +96,6 @@ in
       require("plugins.ui")
       require("plugins.lsp")
     '';
-    files.".config/nvim/lua".source = ./lua;
+    xdg.config.files."nvim/lua".source = ./lua;
   };
 }
