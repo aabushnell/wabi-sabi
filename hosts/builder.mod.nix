@@ -1,7 +1,6 @@
 {
   inputs,
   self,
-  config,
   lib,
   mylib,
   globals,
@@ -11,7 +10,6 @@ let
   inherit (lib.attrsets) attrByPath mapAttrsToList;
   inherit (lib.lists) concatMap map optional;
   inherit (lib.modules) mkAliasOptionModule;
-  inherit (mylib) hjemify;
 
   manifest = import ./manifest.nix;
 

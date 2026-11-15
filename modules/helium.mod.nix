@@ -55,7 +55,7 @@ let
           # shorts -> normal player
           ''||youtube.com/shorts/$document,uritransform=/^https:\/\/(?:www\.|m\.)?youtube\.com\/shorts\/([^\/?#]+)/https:\/\/www.youtube.com\/watch?v=\$1/''
 
-          # keep embeds working despite the click2load list
+          # keep embeds working
           "@@||youtube.com/embed/$frame"
           "@@||youtube-nocookie.com/embed/$frame"
         ]

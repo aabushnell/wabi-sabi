@@ -1,9 +1,8 @@
-{ mylib, ... }:
+{ ... }:
 {
   flake.modules.home.xdg =
     { config, ... }:
     let
-      home = config.directory;
       xdg = config.xdg;
     in
     {

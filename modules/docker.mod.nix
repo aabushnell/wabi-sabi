@@ -31,7 +31,7 @@ in
       users.users.${globals.username}.extraGroups = [ "docker" ];
       environment.systemPackages = [ pkgs.docker-compose ];
 
-      # Rootless alternative (once the unstable regression is fixed):
+      # # Rootless alternative:
       # virtualisation.docker.rootless = {
       #   enable = true;
       #   setSocketVariable = true;
@@ -67,6 +67,8 @@ in
         docker-client
         docker-buildx
         docker-compose
+
+        # custom
         docker-up
         docker-down
         docker-nuke
