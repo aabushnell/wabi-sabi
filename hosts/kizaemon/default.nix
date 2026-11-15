@@ -1,4 +1,7 @@
 { pkgs, ... }:
+let
+  hostname = "kizaemon";
+in
 {
   imports = [
     ./hardware-configuration.nix
@@ -10,4 +13,6 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   system.stateVersion = "25.05";
+
+  my.tailnet.node = hostname;
 }

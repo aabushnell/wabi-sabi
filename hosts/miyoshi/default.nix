@@ -13,4 +13,6 @@ in
 
   networking.computerName = hostname;
   system.defaults.smb.NetBIOSName = hostname;
+
+  my.tailnet.node = hostname;
 }
