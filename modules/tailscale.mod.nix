@@ -32,7 +32,6 @@ in
       # https://github.com/bestutsengineer/tailscaled-gui-macos/tree/main/tailscaled-exitfix
       exitfix = pkgs.fetchpatch {
         url = "https://raw.githubusercontent.com/bestutsengineer/tailscaled-gui-macos/main/tailscaled-exitfix/exitfix.patch";
-        # TODO: replace after first build error reports `got:` hash
         hash = "sha256-Ml0Opo3zgmp1R8pIkopmcFxj8WyMTQQxn7jJrfHMNnk=";
       };
     in
@@ -47,39 +46,8 @@ in
     };
 
   flake.modules.home.tailscale =
-    { lib, config, ... }:
-    let
-      inherit (lib) mkOption types;
-      cfg = config.rc.tailscale;
-    in
+    { lib, pkgs, ... }:
     {
-      options.rc.tailscale = {
-        hosts = mkOption {
-          type = types.attrsOf types.str;
-          default = { };
-          description = ''
-            Tailnet nodes (name -> MagicDNS hostname).
-          '';
-        };
-
-        serves = mkOption {
-          type = types.attrsOf (types.submodule {
-            options = {
-              port   = mkOption { type = types.port; };
-              path   = mkOption { type = types.str;  default = "/"; };
-              funnel = mkOption { type = types.bool; default = false; };
-            };
-          });
-          default = { };
-          description = ''
-            Services announced via tailscale serve.
-          '';
-        };
-      };
-
-      config = {
-        xdg.config.files."tailscale/hosts.json".text = builtins.toJSON cfg.hosts;
-        xdg.config.files."tailscale/serves.json".text = builtins.toJSON cfg.serves;
-      };
+      packages = [ (lib.tailnet.commands.exit pkgs) ];
     };
 }
