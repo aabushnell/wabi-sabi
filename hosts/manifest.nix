@@ -36,6 +36,7 @@
     # shell
     "direnv"
     "nushell"
+    "nvim"
     "shell-utils"
     "starship"
     "vars"
@@ -52,7 +53,6 @@
         "kde"
         "kizaemon"
         "nvidia"
-        "nvim"
         "openssh"
         "ssh"
       ];
