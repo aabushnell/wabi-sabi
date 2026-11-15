@@ -1,4 +1,4 @@
-{ ... }:
+{ mylib, ... }:
 let
   shared =
   { pkgs, ... }:
@@ -46,8 +46,8 @@ in
     };
 
   flake.modules.home.tailscale =
-    { lib, pkgs, ... }:
+    { pkgs, ... }:
     {
-      packages = [ (lib.tailnet.commands.exit pkgs) ];
+      packages = [ (mylib.tailnet.commands.exit pkgs) ];
     };
 }
