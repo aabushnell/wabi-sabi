@@ -48,6 +48,11 @@ in
   flake.modules.home.tailscale =
     { pkgs, ... }:
     {
+      # custom commands
       packages = [ (mylib.tailnet.commands.exit pkgs) ];
+
+      shell.aliases = {
+        ts = "tailscale";
+      };
     };
 }
