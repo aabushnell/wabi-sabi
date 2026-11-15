@@ -53,6 +53,10 @@ in
 
       shell.aliases = {
         ts = "tailscale";
+
+        tss = "tailscale status";
+
+        tse = "tailscale-exit-node";
       };
     };
 }

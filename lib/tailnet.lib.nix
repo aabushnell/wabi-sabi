@@ -46,7 +46,7 @@ in
           '') (attrNames exitNodes);
         in
         pkgs.writeShellApplication {
-          name = "ts-exit";
+          name = "tailscale-exit-node";
           runtimeInputs = [ pkgs.tailscale ];
           text = ''
             set -euo pipefail
@@ -86,7 +86,7 @@ in
               off|none) set_exit "" ;;
               status)   current ;;
               *)
-                echo "usage: ts-exit [${concatStringsSep "|" aliases}|off|status]" >&2
+                echo "usage: tailscale-exit-node [${concatStringsSep "|" aliases}|off|status]" >&2
                 exit 2
                 ;;
             esac
