@@ -26,7 +26,7 @@ require("snacks").setup({
   dashboard = {
     enabled = true,
     preset = {
-      header = load_art("mt1", [[  neovim  ]]),
+      header = load_art("wave", [[  neovim  ]]),
       keys = {
         { icon = " ", key = "f", desc = "Find File", action = function() Snacks.picker.smart() end },
         { icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
