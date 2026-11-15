@@ -65,10 +65,10 @@ in
 
             set_exit() {
               if [[ -z "''${1:-}" ]]; then
-                sudo tailscale set --exit-node=
+                tailscale set --exit-node=
                 echo "exit node cleared"
               else
-                sudo tailscale set --exit-node="$1" --exit-node-allow-lan-access
+                tailscale set --exit-node="$1" --exit-node-allow-lan-access
                 echo "exit node set to $1"
               fi
               current
