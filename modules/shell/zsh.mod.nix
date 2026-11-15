@@ -21,13 +21,6 @@ in
     let
       inherit (lib) mkOption mkOrder mkMerge mkIf types;
       inherit (pkgs.stdenv.hostPlatform) isDarwin;
-
-      zsh-autocomplete = pkgs.fetchFromGitHub {
-        owner = "marlonrichert";
-        repo = "zsh-autocomplete";
-        rev = "25.03.19";
-        sha256 = "eb5a5WMQi8arZRZDt4aX1IV+ik6Iee3OxNMCiMnjIx4=";
-      };
     in
     {
       options.rc.zsh = mkOption {
