@@ -19,9 +19,12 @@
   commonModules = [
     "base"
 
+    # options/
     "env"
+    "tailnet"
     "unfree"
 
+    # modules/
     "apps"
     "dev"
     "fonts"
@@ -33,7 +36,7 @@
     "tailscale"
     "xdg"
 
-    # shell
+    # modules/shell/
     "direnv"
     "nushell"
     "nvim"
