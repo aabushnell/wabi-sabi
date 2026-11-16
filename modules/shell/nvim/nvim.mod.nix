@@ -97,5 +97,9 @@ in
       require("plugins.lsp")
     '';
     xdg.config.files."nvim/lua".source = ./lua;
+
+    shell.aliases = {
+      v = "nvim";
+    };
   };
 }
