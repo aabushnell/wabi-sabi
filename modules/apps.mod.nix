@@ -9,7 +9,7 @@ let
         localsend
         prismlauncher
         _1password-gui
-        jetbrains.clion
+        # jetbrains.clion
         jetbrains.idea
         # jetbrains.pycharm
       ];
@@ -17,7 +17,7 @@ let
       nixpkgs.allowedUnfreePackages = [
         "obsidian"
         "1password"
-        "clion"
+        # "clion"
         "intellij-idea"
         # "pycharm"
       ];
