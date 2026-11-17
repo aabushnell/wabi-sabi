@@ -73,7 +73,7 @@ enable_if("clangd", "clangd", {
 })
 
 -- Rust (via rust-analyzer pkg)
-enable_if("rust-analyzer", "rust-analyzer")
+enable_if("rust-analyzer", "rust_analyzer")
 
 -- Python (via pyright pkg)
 enable_if("pyright-langserver", "pyright")
