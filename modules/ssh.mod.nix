@@ -26,6 +26,18 @@
             User git
             IdentityFile ~/.ssh/id_ed25519_GITHUB
             AddKeysToAgent yes
+
+          Host gitlab.inria.fr
+            HostName gitlab.inria.fr
+            User git
+            IdentityFile ~/.ssh/id_ed25519_GITHUB
+            AddKeysToAgent yes
+
+          Host gitlab.telecom-paris.fr
+            HostName gitlab.telecom-paris.fr
+            User git
+            IdentityFile ~/.ssh/id_ed25519_GITHUB
+            AddKeysToAgent yes
         '';
 
         my.env.session = {
